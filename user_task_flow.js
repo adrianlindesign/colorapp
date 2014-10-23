@@ -6,7 +6,6 @@ user goes to '/'
 	on.CLICK [save] {
 		create new USER model
 	}
-
 	>>>>> authentication
 
 
@@ -25,7 +24,9 @@ user goes to '/'
 
 get 'index'
 	//SEARCH top 100 apps
-	WITH RAKE do (once per timePeriod)
+	WITH RAKE do (once per timePeriod) 
+	>>>>>>>>>
+
 	delete bottom x apps every 10 weeks from database
 	server makes call to API / SCRAPES source
 		if DATABASE.include? == false EACH app name {
