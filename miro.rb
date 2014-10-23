@@ -2,7 +2,7 @@ require 'pry'
 require 'miro'
 require 'httparty'
 
-# http://www.colorschemer.com/online.html #testing
+# http://www.colorschemer.com/online.html #testing.
 
 def hex(app_name)
   url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
