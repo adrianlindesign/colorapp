@@ -1,0 +1,8 @@
+make scraper
+	- seed database
+
+	
+
+
+make backbone structure
+	-
