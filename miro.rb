@@ -2,24 +2,28 @@ require 'pry'
 require 'miro'
 require 'httparty'
 
+# this method makes an API call, then parses
+
 # http://www.colorschemer.com/online.html #testing.
+
+def rgb(app_name)
+  url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
+  colors = Miro::DominantColors.new(url)
+  return colors.to_rgb[0]  # returns dominant rgb color
+end
+
 
 def hex(app_name)
   url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
-
   colors = Miro::DominantColors.new(url)
-
-  app_colors_hex = colors.to_hex
-  app_color_rgb = colors.to_rgb
-  app_color_percentages = colors.by_percentage
-
-
-  return app_colors_hex # returns hex array
-
-  app_colors_hex[0].split('#')[1]
-  # returns hex_code_array's first color, i believe it's the dominant first
+  return colors.to_hex[0] # returns dominant hex color
 end
 
+def color_percents(app_name)
+  url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
+  colors = Miro::DominantColors.new(url)
+  return colors.by_percentage # returns percentages of colours used
+end
 
 binding.pry
 
