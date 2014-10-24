@@ -11,20 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024160049) do
+ActiveRecord::Schema.define(version: 20141024204636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "apps", force: true do |t|
     t.string  "name"
-    t.string  "color"
     t.string  "genre"
-    t.string  "url"
+    t.string  "image_url"
     t.boolean "free"
-    t.integer "r"
-    t.integer "g"
-    t.integer "b"
+    t.string  "color1"
+    t.string  "hex1"
+    t.string  "color2"
+    t.string  "hex2"
+    t.string  "app_url"
   end
 
   create_table "templates", force: true do |t|

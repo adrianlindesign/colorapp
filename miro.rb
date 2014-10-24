@@ -1,6 +1,6 @@
-require 'pry'
-require 'miro'
-require 'httparty'
+# require 'pry'
+# require 'miro'
+# require 'httparty'
 
 # this method makes an API call, then parses
 
@@ -9,14 +9,14 @@ require 'httparty'
 def rgb(app_name)
   url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
   colors = Miro::DominantColors.new(url)
-  return colors.to_rgb[0]  # returns dominant rgb color
+  return colors.to_rgb  # returns dominant rgb color
 end
 
 
 def hex(app_name)
   url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
   colors = Miro::DominantColors.new(url)
-  return colors.to_hex[0] # returns dominant hex color
+  return colors.to_hex # returns dominant hex color
 end
 
 def color_percents(app_name)
@@ -25,7 +25,7 @@ def color_percents(app_name)
   return colors.by_percentage # returns percentages of colours used
 end
 
-binding.pry
+# binding.pry
 
 #first colours
 dropbox = "edf1f4" #super light grey / white
