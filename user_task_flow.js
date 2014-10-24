@@ -25,7 +25,7 @@ user goes to '/'
 get 'index'
 	//SEARCH top 100 apps
 	WITH RAKE do (once per timePeriod) 
-	>>>>>>>>>
+	>>>>>>>>> rake tasks
 
 	delete bottom x apps every 10 weeks from database
 	server makes call to API / SCRAPES source
