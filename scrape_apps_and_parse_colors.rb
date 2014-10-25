@@ -1,4 +1,4 @@
-require_relative './miro' #rgb(app_name) hex(app_name) #color_percents(app_name)
+require_relative './miro_query' #rgb(app_name) hex(app_name) #color_percents(app_name)
 require 'pry'
 require 'miro'
 require 'httparty'

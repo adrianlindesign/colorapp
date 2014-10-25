@@ -4,6 +4,64 @@ Rails.application.routes.draw do
   resources :users do
     resources :templates, shallow: true
   end
+
+  root 'apps#index'
+
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/session' => 'session#destroy'
+
+
+
+#  Prefix Verb   URI Pattern                             Controller#Action
+#              apps GET    /apps(.:format)                         apps#index
+#                   POST   /apps(.:format)                         apps#create
+#           new_app GET    /apps/new(.:format)                     apps#new
+#          edit_app GET    /apps/:id/edit(.:format)                apps#edit
+#               app GET    /apps/:id(.:format)                     apps#show
+#                   PATCH  /apps/:id(.:format)                     apps#update
+#                   PUT    /apps/:id(.:format)                     apps#update
+#                   DELETE /apps/:id(.:format)                     apps#destroy
+#    user_templates GET    /users/:user_id/templates(.:format)     templates#index
+#                   POST   /users/:user_id/templates(.:format)     templates#create
+# new_user_template GET    /users/:user_id/templates/new(.:format) templates#new
+#     edit_template GET    /templates/:id/edit(.:format)           templates#edit
+#          template GET    /templates/:id(.:format)                templates#show
+#                   PATCH  /templates/:id(.:format)                templates#update
+#                   PUT    /templates/:id(.:format)                templates#update
+#                   DELETE /templates/:id(.:format)                templates#destroy
+#             users GET    /users(.:format)                        users#index
+#                   POST   /users(.:format)                        users#create
+#          new_user GET    /users/new(.:format)                    users#new
+#         edit_user GET    /users/:id/edit(.:format)               users#edit
+#              user GET    /users/:id(.:format)                    users#show
+#                   PATCH  /users/:id(.:format)                    users#update
+#                   PUT    /users/:id(.:format)                    users#update
+#                   DELETE /users/:id(.:format)                    users#destroy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
