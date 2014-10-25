@@ -4,8 +4,10 @@ Colorapp.Views.AppListView = Backbone.View.extend({
 	initialize: function(){
 		this.listenTo(this.collection, 'add', this.render);
 	},
-	// tagName: 'article',
 	
+	tagName: 'article',
+	className: 'app-list',
+
 	render: function(){
 		var self = this;
 		this.$el.empty();

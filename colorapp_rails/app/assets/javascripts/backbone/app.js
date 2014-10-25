@@ -8,7 +8,6 @@ Colorapp.initialize = function(){
 	var listView = new Colorapp.Views.AppListView({
 		collection: appCollection,
 		// el: $('.penguin-list') // i think i'm generating an article, then appending to main
-		tagName: 'article'
 	});
 
 	appCollection.fetch();

@@ -16,13 +16,77 @@
 			margin: 0.5em 1em 0 1em;
 		}
 
-/*
-main {
-	text-align: center;
+.app-list {
+	background-color: beige;
+	margin: 2em;
+	padding: 2em;
 
 }
 
-	main ul {
-		text-align: left;
-		list-style: none;
-	}*/
+.app-view {
+	background-color: blanchedalmond;
+	margin: 1em;
+	padding: 1em;
+	border-radius: 1.5em;
+	width: 20%;
+	float: left;
+
+}
+
+navbar #sort-by-color {
+}
+.color {
+	width: 9.35%;
+	height: 1.5em;
+	margin: 0 0.1em 0 0.1em;
+}
+#red {
+	background-color: red;
+}
+#orange {
+	background-color: orange;
+}
+#yellow {
+	background-color: yellow;
+}
+#green {
+	background-color: green;
+}
+#blue {
+	background-color: blue;
+}
+#violet {
+	background-color: violet;
+}
+#brown {
+	background-color: brown;
+}
+#black {
+	background-color: black;
+}
+#grey {
+	background-color: grey;
+}
+#white {
+	background-color: white;
+}
+
+div.sort{
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
