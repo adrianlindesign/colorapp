@@ -22,8 +22,16 @@
 	<%if @error == true%>
 		<p style="color:red;">Please log in</p>
 	<%end%>
+
+	<form action="/users" method="POST">
+		<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+		<input type="text" name="username" placeholder="Username">
+		<input type="text" name="email" placeholder="Email">
+		<input type="password" name="password" placeholder="Password">
+		<button>Sign up</button>
+	</form>
 <%end%>
 
 
-<h1>hi, <%=user.username%></h1>
-<p>your email is: <%=user.email%></p>
+
+<h1> All the apps will be here </h1>

@@ -1,7 +1,7 @@
 class SessionController < ApplicationController
   def new
     if session[:user_id]
-      redirect_to '/apps'
+      redirect_to '/'
     else
       render(:new)
     end
