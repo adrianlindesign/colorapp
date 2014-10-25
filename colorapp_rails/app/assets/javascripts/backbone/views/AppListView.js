@@ -8,7 +8,7 @@ Colorapp.Views.AppListView = Backbone.View.extend({
 		var self = this;
 		this.$el.empty();
 		_.each(this.collection.models, function(app){
-			var appView = new Colorapp.Views.AppView({model: AppModel})
+			var appView = new Colorapp.Views.AppView({model: app})
 			self.$el.append( appView.render().el );
 		});
 	}

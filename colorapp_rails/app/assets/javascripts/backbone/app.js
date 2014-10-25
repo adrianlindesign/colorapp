@@ -1,11 +1,11 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
-var collection;
+var appCollection;
 
 
 Colorapp.initialize = function(){
 	appCollection = new Colorapp.Collections.AppCollection();
 
-	var listView = new Colorapp.Views.PenguinListView({
+	var listView = new Colorapp.Views.AppListView({
 		collection: appCollection,
 		// el: $('.penguin-list') // i think i'm generating an article, then appending to main
 		el: $('#app-list')

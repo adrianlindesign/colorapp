@@ -1,6 +1,6 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 
-Colorapp.Views.PenguinView = Backbone.View.extend({
+Colorapp.Views.AppView = Backbone.View.extend({
 	initialize: function(){
 		this.listenTo( this.model, "change", this.render )
 	},
@@ -10,12 +10,12 @@ Colorapp.Views.PenguinView = Backbone.View.extend({
 	events: {
 		//something about rearranging
 	},
-	template: _.template( $('#app-template').html() ),
+	// template: _.template( $('#app-template').html() ),
 	
 	render: function(){
 		this.$el.empty();
-		this.$el.html(this.template( this.model.attributes ));
-
+		// this.$el.html(this.template( this.model.attributes ));
+		this.$el.html('<li> TESTING </li>')
 		return this
 	}
 

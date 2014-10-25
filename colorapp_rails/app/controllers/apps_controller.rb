@@ -1,6 +1,10 @@
 class AppsController < ApplicationController
   def index
-    render(:index)
+    apps = App.all
+
+    respond_to do |format|
+      format.json { render :json => apps}
+    end
   end
 
   def create

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :templates, shallow: true
   end
 
-  root 'apps#index'
+  root 'home#index'
 
   post '/login' => 'session#create'
   delete '/session' => 'session#destroy'
