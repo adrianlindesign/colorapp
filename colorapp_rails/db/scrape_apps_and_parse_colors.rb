@@ -11,7 +11,7 @@ require 'color_namer'
 url_paid_apps = 'http://www.apple.com/itunes/charts/paid-apps/'
 url_free_apps = 'http://www.apple.com/itunes/charts/free-apps/'
 
-def scrape_app_details(url)
+def scrape_app_details(url, price_is_free)
   app_details = []
   url = Nokogiri::HTML(HTTParty.get(url))
 
@@ -22,7 +22,7 @@ def scrape_app_details(url)
       name: "",
       genre: "",
       image_url: "",
-      free: true,
+      free: price_is_free,
       color1: "",
       hex1: "",
       color2: "",
@@ -65,5 +65,5 @@ def scrape_app_details(url)
   return app_details
 end
 # free_app_details = scrape_app_details(url_free_apps)
-paid_app_details = scrape_app_details(url_paid_apps)
-binding.pry
+# paid_app_details = scrape_app_details(url_paid_apps)
+# binding.pry
