@@ -1,4 +1,7 @@
-<h1>ColorApp.ly</h1>
+<header id="title-header">
+  <h1>ColorApp.ly</h1>
+  <%= render 'home/navbar' %>
+</header>
 
 <form action="/users" method="POST">
 	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">

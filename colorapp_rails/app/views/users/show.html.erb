@@ -1,6 +1,7 @@
-<h1>ColorApp.ly</h1>
-<%= render 'home/navbar' %>
-
+<header id="title-header">
+  <h1>ColorApp.ly</h1>
+  <%= render 'home/navbar' %>
+</header>
 
 <!-- welcome message appears on profile page if you are this user -->
 <%if user.id == session[:user_id]%>

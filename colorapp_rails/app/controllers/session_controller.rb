@@ -9,7 +9,7 @@ class SessionController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       @error = true
-      render :new
+      render :error
     end
   end
 
