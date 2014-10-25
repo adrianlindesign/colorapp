@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   root 'apps#index'
 
-  get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/session' => 'session#destroy'
 

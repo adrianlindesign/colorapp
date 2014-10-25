@@ -1,0 +1,10 @@
+<h1>ColorApp.ly</h1>
+<%= render 'home/navbar' %>
+
+
+<h1>Check out other users!</h1>
+<ul>
+	<%users.each do |u|%>
+		<li><a href="/users/<%=u.id%>"> <%=u.username%> </a></li>
+	<%end%>
+</ul>

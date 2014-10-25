@@ -1,36 +1,10 @@
 <h1>ColorApp.ly</h1>
-
-<!--logout button-->
-<%if session[:user_id]%>
-	<form action="/session" method="POST">
-		<input type="hidden" name="_method" value="DELETE">
-		<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-		<button>Log out</button>
-	</form>
-<%end%>
-
-<!-- log in -->
-<%unless session[:user_id]%>
-	<form action="/login" method="POST">
-		<input type="text" name="email" placeholder="Email">
-		<input type="password" name="password" placeholder="Password">
-		<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-		<button>Log in</button>
-	</form>
+<%= render 'home/navbar' %>
 
 
-	<%if @error == true%>
-		<p style="color:red;">Please log in</p>
-	<%end%>
 
-	<form action="/users" method="POST">
-		<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-		<input type="text" name="username" placeholder="Username">
-		<input type="text" name="email" placeholder="Email">
-		<input type="password" name="password" placeholder="Password">
-		<button>Sign up</button>
-	</form>
-<%end%>
+
+
 
 
 
