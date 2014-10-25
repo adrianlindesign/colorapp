@@ -14,11 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 // require_tree .
-
-//= require ./library/backbone
 //= require ./library/underscore
+//= require ./library/backbone
 
+
+//= require ./backbone/app
 //= require ./backbone/models/AppModel
 //= require ./backbone/collections/AppCollection
-//= require ./backbone/AppView
-//= require ./backbone/AppListView
+//= require ./backbone/views/AppView
+//= require ./backbone/views/AppListView

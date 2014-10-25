@@ -1,21 +1,15 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 
-Colorapp.Views.PenguinView = Backbone.View.extend({
+Colorapp.Views.AppListView = Backbone.View.extend({
 	initialize: function(){
-		this.listenTo( this.model, "change", this.render )
+		this.listenTo(this.collection, 'add', this.render);
 	},
-	tagName: 'section.app-view',
-	// editTemplate: _.template( $('#penguin-edit-template').html() ),
-	// template: _.template( $('#penguin-template').html() ),
-	events: {
-		//something about rearranging
-	},
-	template: _.template( $('#app-template').html() ),
 	render: function(){
+		var self = this;
 		this.$el.empty();
-		this.$el.html(this.template( this.model.attributes ));
-
-		return this
-	},
-
-});
+		_.each(this.collection.models, function(app){
+			var appView = new Colorapp.Views.AppView({model: AppModel})
+			self.$el.append( appView.render().el );
+		});
+	}
+})
