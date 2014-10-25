@@ -8,10 +8,12 @@ Colorapp.initialize = function(){
 	var listView = new Colorapp.Views.AppListView({
 		collection: appCollection,
 		// el: $('.penguin-list') // i think i'm generating an article, then appending to main
-		el: $('#app-list')
+		tagName: 'article'
 	});
 
 	appCollection.fetch();
+	$('#main-content-area').append(listView.el)
+	
 
 	// $('.penguins').find('form').on('submit', function(e){
 	// 	e.preventDefault();
@@ -25,4 +27,5 @@ Colorapp.initialize = function(){
 $(function(){
 	console.log($('#app-template'))
 	Colorapp.initialize();
+
 });

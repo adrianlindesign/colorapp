@@ -4,7 +4,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 	initialize: function(){
 		this.listenTo( this.model, "change", this.render )
 	},
-	tagName: 'li',
+	tagName: 'section',
 	// editTemplate: _.template( $('#penguin-edit-template').html() ),
 	// template: _.template( $('#penguin-template').html() ),
 	events: {
@@ -15,7 +15,8 @@ Colorapp.Views.AppView = Backbone.View.extend({
 	render: function(){
 		this.$el.empty();
 		// this.$el.html(this.template( this.model.attributes ));
-		this.$el.html('<li> TESTING </li>')
+		console.log(this.model.get('name'))
+		this.$el.html('<h4>' + this.model.get('name') + '</h4>')
 		return this
 	}
 
