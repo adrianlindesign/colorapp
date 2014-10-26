@@ -25,7 +25,6 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		entrails += "<a href='" + this.model.get('app_url') + "'>"
 		entrails += 	"<h5>" + this.model.get('name') + '</h5>'
 		entrails += "</a>"
-		entrails += "<p>" + this.model.get('genre') + "</p>"
 
 
 		this.$el.html(entrails)
