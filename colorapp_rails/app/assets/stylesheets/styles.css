@@ -35,45 +35,52 @@
 
 navbar #sort-by-color {
 }
+
+div.sort{
+	display: inline-block;
+}
+
 .color {
 	width: 9.35%;
 	height: 1.5em;
 	margin: 0 0.1em 0 0.1em;
 }
-#red {
-	background-color: red;
-}
-#orange {
-	background-color: orange;
-}
-#yellow {
-	background-color: yellow;
-}
-#green {
-	background-color: green;
-}
-#blue {
-	background-color: blue;
-}
-#violet {
-	background-color: violet;
-}
-#brown {
-	background-color: brown;
-}
-#black {
-	background-color: black;
-}
-#grey {
-	background-color: grey;
-}
-#white {
-	background-color: white;
+.color:hover{
+	cursor: pointer;
 }
 
-div.sort{
-	display: inline-block;
+#Red {
+	background-color: red;
 }
+#Orange {
+	background-color: orange;
+}
+#Yellow {
+	background-color: yellow;
+}
+#Green {
+	background-color: green;
+}
+#Blue {
+	background-color: blue;
+}
+#Violet {
+	background-color: violet;
+}
+#Brown {
+	background-color: brown;
+}
+#Black {
+	background-color: black;
+}
+#Grey {
+	background-color: grey;
+}
+#White {
+	background-color: white;
+	border: solid lightgrey 1px;
+}
+
 
 
 
