@@ -36,6 +36,12 @@
 
 }
 
+img.appView {
+	height: 7.15em;
+	border-radius: 1.26em;
+}
+
+
 navbar #sort-by-color {
 }
 

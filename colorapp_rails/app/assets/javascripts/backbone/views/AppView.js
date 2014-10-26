@@ -20,7 +20,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		console.log(this.model.get('name'))
 
 		var entrails = ""
-		entrails += "<img src='" + this.model.get('image_url') + "'/>"
+		entrails += "<img class='appView' src='" + this.model.get('image_url') + "'/>"
 		entrails += "<p>" + this.model.get('name') + "</p>"
 		// entrails += "<a href='" + this.model.get('app_url') + "'>"
 		// entrails += 	"<h5>" + this.model.get('name') + '</h5>'

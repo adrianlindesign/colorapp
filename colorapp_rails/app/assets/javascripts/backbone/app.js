@@ -60,6 +60,7 @@ function setUpSearchBar(){
 		var searchedApp = $('#app-search-input').val();
 		var searchedAppResult = appCollection.findWhere({name: searchedApp});
 		
+		
 		//show search result
 		if (searchedAppResult != undefined) {
 			console.log("we have the app in stock!");
@@ -73,25 +74,11 @@ function setUpSearchBar(){
 
 		} else { //if doesn't exist, add to database, then show
 			console.log("somebody call the API!");
+			$.post('/apps.json', {search:searchedApp}, function(result){
+				console.log(result);
+			});
+		
 
-			// $.create('/apps', function(app){
-
-			// 	var appModel = new Colorapp.Models.AppModel({
-			// 		id: app["id"],
-			// 		name: app["name"],
-			//         genre: app["genre"],
-			//         image_url: app["image_url"],
-			//         free: app["free"],
-			//         color1: app["color1"],
-			//         hex1: app["hex1"],
-			//         hex1_percent: app["hex1_percent"],
-			//         color2: app["color2"],
-			//         hex2: app["hex2"],
-			//         hex2_percent: app["hex2_percent"],
-			//         app_url: app["app_url"]  
-			// 	});
-			// 	appCollection.add(appModel);
-			// });
 		}
 	});
 }
