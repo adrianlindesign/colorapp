@@ -19,7 +19,7 @@ def hex(app_name)
   return colors.to_hex # returns dominant hex color
 end
 
-def color_percents(app_name)
+def percents(app_name)
   url= JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]['artworkUrl60']
   colors = Miro::DominantColors.new(url)
   return colors.by_percentage # returns percentages of colours used

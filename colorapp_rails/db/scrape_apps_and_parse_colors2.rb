@@ -44,7 +44,7 @@ def scrape_app_details(url, price_is_free)
     
     if colors_array[0]
       hash[:hex1] = colors_array[0]
-      hash[:hex1_percent] = percents_array[0]*10
+      hash[:hex1_percent] = percents_array[0]*100
 
       color1_details_array = ColorNamer.name_from_html_hash(hash[:hex1])
       hash[:color1] = color1_details_array[2]
@@ -56,8 +56,7 @@ def scrape_app_details(url, price_is_free)
 
     if colors_array[1]
       hash[:hex2] = colors_array[1]
-      hash[:hex2_percent] = percents_array[1]*10
-      
+      hash[:hex2_percent] = percents_array[1]*100
       color2_details_array = ColorNamer.name_from_html_hash(hash[:hex2])
       hash[:color2] = color2_details_array[2]
     else 

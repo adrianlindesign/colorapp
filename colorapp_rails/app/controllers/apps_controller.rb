@@ -15,8 +15,10 @@ class AppsController < ApplicationController
       free: params["free"],
       color1: params["color1"],
       hex1: params["hex1"],
+      hex1_percent: params["hex1_percent"],
       color2: params["color2"],
       hex2: params["hex2"],
+      hex2_percent: params["hex2_percent"],
       app_url: params["app_url"]
     })
 

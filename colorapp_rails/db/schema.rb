@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024204636) do
+ActiveRecord::Schema.define(version: 20141026035709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141024204636) do
     t.string  "color2"
     t.string  "hex2"
     t.string  "app_url"
+    t.integer "hex1_percent"
+    t.integer "hex2_percent"
   end
 
   create_table "templates", force: true do |t|
