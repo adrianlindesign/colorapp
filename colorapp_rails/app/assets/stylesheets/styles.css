@@ -24,12 +24,15 @@
 }
 
 .app-view {
-	background-color: blanchedalmond;
-	margin: 1em;
-	padding: 1em;
-	border-radius: 1.5em;
-	width: 20%;
+	
+	margin: 0.75em;
+	padding: 0.75em;
 	float: left;
+
+/*	background-color: blanchedalmond;
+	border-radius: 1.5em;
+	width: 20%;*/
+	
 
 }
 
