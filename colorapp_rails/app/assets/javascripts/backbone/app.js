@@ -10,6 +10,7 @@ Colorapp.initialize = function(){
 	});
 
 	appCollection.fetch();
+
 	$('#main-content-area').append(listView.el)
 
 	setUpColorNavbar();
