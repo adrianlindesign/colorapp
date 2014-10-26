@@ -22,3 +22,9 @@ end
 free_app_details.each do |hash|
   HTTParty.post('http://localhost:3000/apps.json', :body => hash)
 end
+
+#skype
+#boximize
+#acorns
+#wechat
+#whatsapp

@@ -57,29 +57,41 @@ function setUpGenreNavbar(){
 
 function setUpSearchBar(){
 	$('#app-search-button').on('click', function(){
-		var searchedApp = $('#app-search-input').val();
-		var searchedAppResult = appCollection.findWhere({name: searchedApp});
-		
-		
+		var app = $('#app-search-input').val();
+		var appResult = appCollection.findWhere({name: app});
+
+		var appView; // declare undefined variable
+
 		//show search result
-		if (searchedAppResult != undefined) {
+		if (appResult != undefined) {
 			console.log("we have the app in stock!");
 
-			var thisView = new Colorapp.Views.AppView({
-				model: searchedAppResult
+			appView = new Colorapp.Views.AppView({
+				model: appResult
 			});
-			thisView.render();
+
+			appView.render(); //render and append
 			$('#main-content-area').empty();
-			$('#main-content-area').append(thisView.el);
+			$('#main-content-area').append(appView.el);
 
 		} else { //if doesn't exist, add to database, then show
 			console.log("somebody call the API!");
-			$.post('/apps.json', {search:searchedApp}, function(result){
-				console.log(result);
-			});
-		
+			$.post('/apps.json', {search:app}, function(result){
+				
+				//new appModel, add to collection
+				var appModel = new Colorapp.Models.AppModel(result);
+				appCollection.add(appModel);
 
+				//new view, show to user
+				appView = new Colorapp.Views.AppView({
+					model: appModel
+				});
+				appView.render(); //render and append
+				$('#main-content-area').empty();
+				$('#main-content-area').append(appView.el);
+			});
 		}
+		
 	});
 }
 

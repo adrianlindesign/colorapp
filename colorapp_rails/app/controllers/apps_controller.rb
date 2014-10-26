@@ -13,8 +13,6 @@ class AppsController < ApplicationController
 
     app_details = JSON.parse(HTTParty.get("https://itunes.apple.com/search?term=#{app_name}&country=us&entity=software"))['results'][0]
 
-
-
     # is free?
     is_free = "";
     if app_details['price'] == 0
@@ -22,8 +20,6 @@ class AppsController < ApplicationController
     else
       is_free = false;
     end
-
-
 
     # colors
     app_icon_url = app_details['artworkUrl512']
@@ -37,9 +33,14 @@ class AppsController < ApplicationController
     hex2_percent = miro_colors.by_percentage[1] * 100
     color2 = ColorNamer.name_from_html_hash(hex1)[2]
 
+    #name
+    app_name_full = app_details['trackName']
+    app_name = app_name_full.split(" -")[0].split(" –")[0].split(":")[0] #get rid of subtitles
+    app_name = app_name.strip! if app_name[0] == " " || app_name[-1] == " " #trim 
 
+    #create app
     a = App.create({
-      name: app_details['artistName'],
+      name: app_name,
       genre: app_details['genres'][0],
       image_url: app_icon_url,
       free: is_free,
@@ -52,22 +53,12 @@ class AppsController < ApplicationController
       app_url: app_details['trackViewUrl']
     })
 
-
+    #return data
     respond_to do |format|
       format.json { render :json => a }
     end
+    
   end
-end
 
-# HTTParty.post('http://localhost:3000/apps', :body => {name: "june"})
-# HTTParty.post('http://localhost:3000/apps', body: {
-#              :name => "Google Earth",
-#             :genre => "Travel",
-#         :image_url => "http://images.apple.com/autopush/us/itunes/charts/free-apps/images/2014/9/a5d308d7-ef41-80ea-923c-523ce3cb0886mzl.ogsofgoc.png",
-#              :free => true,
-#            :color1 => "Blue",
-#              :hex1 => "#010102",
-#            :color2 => "Violet",
-#              :hex2 => "#070814",
-#           :app_url => "https://itunes.apple.com/us/app/google-earth/id293622097?mt=8&uo=4&v0=WWW-NAUS-ITSTOP100-FREEAPPS&l=en"
-#     })
+
+end
