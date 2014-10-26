@@ -98,20 +98,20 @@ navbar #sort-by-color {
 
 
 .template {
-	height: 100%;
-	width: 30%;
+	height: 720px;
+	width: 343px;
 	/*float: right;*/
 
 	position: fixed;
- 	bottom: 1em;
-  	left: 1em;
+ 	bottom: 2.3%;
+  	right: 2.3%;
   	clear: both;
 }
 
 .iPhone-5 {
 	background-image: url(../images/template_iphone.png);
 	background-size: 100%;
-	height: 720px;
+
 }
 /*	.iPhone-5 img {
 		height: 100%;
@@ -129,14 +129,14 @@ navbar #sort-by-color {
 	margin-top: 9.5em;
 }
 .last-row {
-	margin-top: 1em;
+	margin-top: 1%;
 }
 .templates-app {
 	height: 4.2em;
 	width: 4.2em;
 	margin: 0.5em 0.25em 0.5em 0.25em;
 	border-radius: 1em;
-	background-color: beige;
+	background-color: #FAFAFA;
 	display: inline-block;
 }
 
