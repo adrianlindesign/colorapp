@@ -9,7 +9,7 @@ Colorapp.initialize = function(){
 		collection: appCollection
 	});
 
-	appCollection.fetch();
+	// appCollection.fetch();
 
 	$('#main-content-area').append(listView.el)
 
