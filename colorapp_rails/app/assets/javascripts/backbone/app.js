@@ -15,6 +15,7 @@ Colorapp.initialize = function(){
 
 	setUpColorNavbar();
 	setUpGenreNavbar();
+	setUpSearchBar();
 }
 
 
@@ -51,6 +52,18 @@ function setUpGenreNavbar(){
 		listView.render();
 		$('#main-content-area').empty();
 		$('#main-content-area').append(listView.el) // do i need this?
+	});
+}
+
+function setUpSearchBar(){
+	$('#app-search-button').on('click', function(){
+		var searchedApp = $('#app-search-input');
+		var searchedAppResult = appCollection.findWhere({name: searchedApp});
+		if (searchedAppResult != undefined) {
+			console.log("we have the app in stock!");
+		} else {
+			console.log("somebody call the API!");
+		}
 	});
 }
 

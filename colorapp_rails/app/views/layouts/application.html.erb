@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Colorapp</title>
+  <title>ColorApp.ly</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,6 +17,8 @@
 </head>
 <body>
   <main>
+
+    <%= render 'home/bootstrap_navbar' %>
     <%= yield %>    
   </main>
 

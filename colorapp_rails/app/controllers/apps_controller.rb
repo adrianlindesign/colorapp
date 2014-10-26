@@ -8,6 +8,8 @@ class AppsController < ApplicationController
   end
 
   def create
+    
+
     a = App.create({
       name: params["name"],
       genre: params["genre"],
