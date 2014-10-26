@@ -7,44 +7,42 @@ Colorapp.initialize = function(){
 
 	var listView = new Colorapp.Views.AppListView({
 		collection: appCollection
-		// el: $('.penguin-list') // i think i'm generating an article, then appending to main
 	});
 
 	appCollection.fetch();
 	$('#main-content-area').append(listView.el)
-	
-
-	// $('.penguins').find('form').on('submit', function(e){
-	// 	e.preventDefault();
-	// 	var penguinName = $('input').val();
-	// 	$('input').val('')
-	// 	collection.create({name: penguinName})
-	// })
 
 	setUpColorNavbar();
-
-
 }
 
 
+
 function setUpColorNavbar(){
-	//setting up the color navbar to sort colors
 	$('.color').on('click', function(){
 		var color = this.id
-		console.log(color) //black, blue etc
+		console.log(color) 
 
-		var colorSortedApps = appCollection.where({color1: color})
+		colorSortedAppsArray = appCollection.where({color1: color})
+
+		var colorSortedAppsCollection = new Colorapp.Collections.AppCollection(colorSortedAppsArray)
+
+
+
+
 		var listView = new Colorapp.Views.AppListView({
-			collection: colorSortedApps
+			collection: colorSortedAppsCollection
 		});
-
+		listView.render();
+		$('#main-content-area').empty();
 		$('#main-content-area').append(listView.el) // do i need this?
 	});
 }
 
 
 $(function(){
-	Colorapp.initialize();
+	if( $('#main-content-area') != [] ){
+		//How do i make it so it only loads on all apps?
+		Colorapp.initialize();
+	}	
 });
-
 
