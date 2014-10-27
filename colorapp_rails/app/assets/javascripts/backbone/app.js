@@ -84,10 +84,32 @@ function setUpGenreNavbar(){
 	});
 }
 
+function capitalizeSearchedApp(searchedApp){
+	//to make search case insensitive (probably can take this out of funciton later)
+	var appCapsLocked = searchedApp.toUpperCase();
+	var allAppNames = appCollection.pluck('name');
+	var allAppNamesCapsLocked = _.map(allAppNames, function(appName){
+		if (appName != null) {
+			return appName.toUpperCase();
+		}	
+	});
+	var index = allAppNamesCapsLocked.indexOf(appCapsLocked);
+	if ( index != -1 ) {
+		return allAppNames[index]
+	}
+}
+
+// search on keyup
 function setUpSearchBar(){
-	$('#app-search-button').on('click', function(){
-		var app = $('#app-search-input').val();
-		var appResult = appCollection.findWhere({name: app});
+	
+	// for real-time searching
+	$('#app-search-input').keyup(function(){
+		var app = $(this).val(); 
+		console.log(app);
+
+		var capApp = capitalizeSearchedApp(app);
+
+		var appResult = appCollection.findWhere({name: capApp});
 
 		var appView; // declare undefined variable
 
@@ -102,10 +124,19 @@ function setUpSearchBar(){
 			appView.render(); //render and append
 			$('#main-content-area').empty();
 			$('#main-content-area').append(appView.el);
+		}
+	});
 
-		} else { //if doesn't exist, add to database, then show
+	// for enter
+	$('#app-search-input').keypress(function(e){
+		var app = $(this).val();
+
+		if (e.which == 13) {
+			console.log('pressed enter!');
 			console.log("somebody call the API!");
+		
 			app = encodeURIComponent(app);
+
 			$.post('/apps.json', {search:app}, function(result){
 				
 				//new appModel, add to collection
@@ -120,11 +151,14 @@ function setUpSearchBar(){
 				$('#main-content-area').empty();
 				$('#main-content-area').append(appView.el);
 			});
+			$('#app-search-input')[0].value = ""; // clear content
 		}
-		$('#app-search-input')[0].value = ""; // clear content
-		
 	});
 }
+
+
+
+
 
 function setUpTemplateToggle(){
 	$('#template-button').on('click', function(){
