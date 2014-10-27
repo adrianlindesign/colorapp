@@ -33,3 +33,5 @@
 //= require ./backbone/collections/UserCollection
 
 //= require ./backbone/views/ContactSectionView
+
+//= require ./backbone/views/SectionView

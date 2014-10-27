@@ -270,17 +270,15 @@ function setUpLinkNavBar(){
 
 	//set up About to show about
 	$('#navbar-about').click(function(){
-
+		var aboutPageView = new Colorapp.Views.SectionView();
+		aboutPageView.render("About", "This is the about page. We write stuff about ourselves here.");
+		$('#main-content-area').empty();
+		$('#main-content-area').append(aboutPageView.el);
 	});
 
 	//set up Contact Page
 	$('#navbar-contact').click(function(){
-		// change the message
-		$('#message-price').text("");
-		$('#message-color').text("");
-		$('#message-genre').text("");
-		$('#message-view').text("");
-		
+
 		var contactSectionView = new Colorapp.Views.ContactSectionView();
 		renderAndAppendView(contactSectionView);
 	});

@@ -14,7 +14,10 @@ Colorapp.Views.UserView = Backbone.View.extend({
 
 	// template: _.template( $('#app-template').html() ),
 	
+
 	render: function(){
+
+		
 
 		console.log(this.model.get('username'))
 

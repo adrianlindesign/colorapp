@@ -8,6 +8,11 @@ Colorapp.Views.ContactSectionView = Backbone.View.extend({
 	// template: _.template( $('#app-template').html() ),
 	
 	render: function(){
+		// change the message
+		$('#message-price').text("");
+		$('#message-color').text("");
+		$('#message-genre').text("");
+		$('#message-view').text("");
 		
 		// this.$el.html(this.template( this.model.attributes ));
 
