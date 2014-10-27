@@ -3,6 +3,7 @@ var appCollection;
 var selectedColor;
 
 
+
 Colorapp.initialize = function(){
 	appCollection = new Colorapp.Collections.AppCollection();
 
@@ -31,6 +32,9 @@ function setUpColorNavbar(){
 		//choose color (scope is global, will be used in genre as well)
 		selectedColor = this.id
 
+		//change the message
+		$('#message-color').text(selectedColor);
+		$('#message-genre').text("");
 		
 		var colorSortedAppsCollection = createColorCollection(selectedColor);
 
@@ -52,10 +56,22 @@ function createColorCollection(color){
 
 function setUpGenreNavbar(){
 	$('.genre').on('click', function(){
-		var colorSortedAppsCollection = createColorCollection(selectedColor);
-	
+
+		var sortedApps;
+
+		// if color is chosen, use it, else, use generic appCollection
+		if (selectedColor == undefined){
+			sortedApps = appCollection.clone(); //do not redfine appCollection, we'll need it later
+		} else {
+			sortedApps = createColorCollection(selectedColor);
+		}
+		
 		var genre = this.id
-		var genreSortedArray = colorSortedAppsCollection.where({genre: genre})
+
+		//change the message
+		$('#message-genre').text(genre);
+
+		var genreSortedArray = sortedApps.where({genre: genre})
 
 		var genreSortedAppsCollection = new Colorapp.Collections.AppCollection(genreSortedArray)
 
