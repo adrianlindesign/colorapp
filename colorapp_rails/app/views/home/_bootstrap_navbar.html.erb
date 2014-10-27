@@ -10,7 +10,7 @@
             <div class="form-group">
               <input id="app-search-input" type="text" class="form-control" placeholder="add app (soon: search)">
             </div>
-            <button type="button" class="btn btn-default"><span id="app-search-button" class="sort glyphicon glyphicon-search"></span></button>
+            <button type="button" class="btn btn-default" id="app-search-button"><span class="sort glyphicon glyphicon-search"></span></button>
           </form>
 
 
@@ -33,6 +33,7 @@
                   </select>                
                 </form>
               </li>
+              <li><button type="button" class="btn btn-default" id="template-button"><span class="glyphicon glyphicon-plus"></span></button></li>
 
               <li><a href="/users/<%=session[:user_id]%>">My Profile</a></li>
 

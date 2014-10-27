@@ -98,18 +98,18 @@ navbar #sort-by-color {
 
 
 .template {
-	height: 720px;
+	height: 698px;
 	width: 343px;
 	/*float: right;*/
 
 	position: fixed;
  	bottom: 2.3%;
   	right: 2.3%;
-  	clear: both;
+
 }
 
-.iPhone-5 {
-	background-image: url(../images/template_iphone.png);
+.iPhone-6 {
+	background-image: url(../images/template_iphone6.png);
 	background-size: 100%;
 
 }
@@ -118,28 +118,29 @@ navbar #sort-by-color {
 	}
 */
 
-
 .templates-screen {
-	margin-left: 10.1%;
+	margin-left: 8.2%;
 }
 .templates-row {
 
 }
 .first-row {
-	margin-top: 9.5em;
+	margin-top: 7.4em;
 }
 .last-row {
-	margin-top: 1%;
+	margin-top: 2em;
 }
 .templates-app {
-	height: 4.2em;
-	width: 4.2em;
-	margin: 0.5em 0.25em 0.5em 0.25em;
+	height: 3.8em;
+	width: 3.8em;
+	margin: 0.75em 0.55em 0.75em 0.55em;
 	border-radius: 1em;
-	background-color: #FAFAFA;
+	background-color: #F2F2F2;
 	display: inline-block;
 }
-
+.templates-app:hover {
+	background-color: #E0E0E0;
+}
 
 
 

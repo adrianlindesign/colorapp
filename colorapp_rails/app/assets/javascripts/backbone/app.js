@@ -16,6 +16,7 @@ Colorapp.initialize = function(){
 	setUpColorNavbar();
 	setUpGenreNavbar();
 	setUpSearchBar();
+	setUpTemplateToggle();
 }
 
 
@@ -92,6 +93,13 @@ function setUpSearchBar(){
 			});
 		}
 		
+	});
+}
+
+function setUpTemplateToggle(){
+	$('#template-button').on('click', function(){
+		$('.iPhone-6').toggleClass('hide');
+		console.log('boom, unhidden!');
 	});
 }
 
