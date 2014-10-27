@@ -23,3 +23,6 @@
 //= require ./backbone/collections/AppCollection
 //= require ./backbone/views/AppView
 //= require ./backbone/views/AppListView
+
+
+//=require backbone-fetch-event

@@ -1,26 +1,39 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
-var appCollection;
+var fullAppCollection;
 var selectedColor;
 var selectedPrice = "All";
+var fullListView;
 
 
 
 Colorapp.initialize = function(){
-	appCollection = new Colorapp.Collections.AppCollection();
 
-	var listView = new Colorapp.Views.AppListView({
-		collection: appCollection
+	fullAppCollection = new Colorapp.Collections.AppCollection({
+		fetch: function(options) {
+	        this.trigger('fetch', this, options);
+	        return Backbone.Collection.prototype.fetch.call(this, options);
+	    }
 	});
 
-	appCollection.fetch();
-
-	$('#main-content-area').append(listView.el)
+	fullListView = new Colorapp.Views.AppListView({
+		collection: fullAppCollection
+	});
+		
+	// $('#main-content-area').html("<img src='/images/spinner.gif'>");
 
 	setUpColorNavbar();
 	setUpGenreNavbar();
 	setUpSearchBar();
 	setUpTemplateToggle();
 	setUpPriceFilter();
+	setUpLinkNavBar();
+	
+
+	fullAppCollection.fetch();
+	
+	renderAndAppendView(fullListView);
+
+
 }
 
 
@@ -51,26 +64,25 @@ function setUpColorNavbar(){
 		
 		var colorSortedAppsCollection = createColorCollection(selectedColor);
 
-		var listView = new Colorapp.Views.AppListView({
+		var colorListView = new Colorapp.Views.AppListView({
 			collection: colorSortedAppsCollection
 		});
-		listView.render();
-		$('#main-content-area').empty();
-		$('#main-content-area').append(listView.el) // do i need this?
+		renderAndAppendView(colorListView);
 	});
 }
 
 function createColorCollection(color){
-	var colorSortedArray = appCollection.where({color1: color})
+	var colorSortedArray = fullAppCollection.where({color1: color})
 	var colorSortedAppsCollection = new Colorapp.Collections.AppCollection(colorSortedArray)
 	return colorSortedAppsCollection
 }
+
 function setUpPriceFilter(){
 	$('#message-search').on('click', function(){
 		var sortedApps;
-		// if color is chosen, use it, else, use generic appCollection
+		// if color is chosen, use it, else, use generic fullAppCollection
 		if (selectedColor == undefined){
-			sortedApps = appCollection.clone(); //do not redfine appCollection, we'll need it later
+			sortedApps = fullAppCollection.clone(); //do not redfine fullAppCollection, we'll need it later
 		} else {
 			sortedApps = createColorCollection(selectedColor);
 		}
@@ -98,12 +110,10 @@ function setUpPriceFilter(){
 		//generate the view
 		var priceSortedAppsCollection = new Colorapp.Collections.AppCollection(priceSortedArray)
 
-		var listView = new Colorapp.Views.AppListView({
+		var priceListView = new Colorapp.Views.AppListView({
 			collection: priceSortedAppsCollection
 		});
-		listView.render();
-		$('#main-content-area').empty();
-		$('#main-content-area').append(listView.el) // do i need this?
+		renderAndAppendView(priceListView);
 
 	});
 }
@@ -113,9 +123,9 @@ function setUpGenreNavbar(){
 
 		var sortedApps;
 
-		// if color is chosen, use it, else, use generic appCollection
+		// if color is chosen, use it, else, use generic fullAppCollection
 		if (selectedColor == undefined){
-			sortedApps = appCollection.clone(); //do not redfine appCollection, we'll need it later
+			sortedApps = fullAppCollection.clone(); //do not redfine fullAppCollection, we'll need it later
 		} else {
 			sortedApps = createColorCollection(selectedColor);
 		}
@@ -137,19 +147,17 @@ function setUpGenreNavbar(){
 		//generate the view
 		var genreSortedAppsCollection = new Colorapp.Collections.AppCollection(genreSortedArray)
 
-		var listView = new Colorapp.Views.AppListView({
+		var genreListView = new Colorapp.Views.AppListView({
 			collection: genreSortedAppsCollection
 		});
-		listView.render();
-		$('#main-content-area').empty();
-		$('#main-content-area').append(listView.el) // do i need this?
+		renderAndAppendView(genreListView);
 	});
 }
 
 function capitalizeSearchedApp(searchedApp){
 	//to make search case insensitive (probably can take this out of funciton later)
 	var appCapsLocked = searchedApp.toUpperCase();
-	var allAppNames = appCollection.pluck('name');
+	var allAppNames = fullAppCollection.pluck('name');
 	var allAppNamesCapsLocked = _.map(allAppNames, function(appName){
 		if (appName != null) {
 			return appName.toUpperCase();
@@ -171,7 +179,7 @@ function setUpSearchBar(){
 
 		var capApp = capitalizeSearchedApp(app);
 
-		var appResult = appCollection.findWhere({name: capApp});
+		var appResult = fullAppCollection.findWhere({name: capApp});
 
 		var appView; // declare undefined variable
 
@@ -183,9 +191,7 @@ function setUpSearchBar(){
 				model: appResult
 			});
 
-			appView.render(); //render and append
-			$('#main-content-area').empty();
-			$('#main-content-area').append(appView.el);
+			renderAndAppendView(appView);
 		}
 	});
 
@@ -203,15 +209,13 @@ function setUpSearchBar(){
 				
 				//new appModel, add to collection
 				var appModel = new Colorapp.Models.AppModel(result);
-				appCollection.add(appModel);
+				fullAppCollection.add(appModel);
 
 				//new view, show to user
 				appView = new Colorapp.Views.AppView({
 					model: appModel
 				});
-				appView.render(); //render and append
-				$('#main-content-area').empty();
-				$('#main-content-area').append(appView.el);
+				renderAndAppendView(appView);
 			});
 			$('#app-search-input')[0].value = ""; // clear content
 		}
@@ -229,12 +233,34 @@ function setUpTemplateToggle(){
 	});
 }
 
+function renderAndAppendView(view){
+	view.render();
+	$('#main-content-area').empty(); //clear it of the #loading-circle
+	$('#main-content-area').append(view.el);
+}
+
+function setUpLinkNavBar(){
+	// set up home to show all apps
+	$('#navbar-home').click(function(){
+		renderAndAppendView(fullListView); //fullListView is a global
+	});
+
+	//set up about to show about
+	$('#navbar-about').click(function(){
+
+	});
+}
+
+
+
+
 
 $(function(){
-	if( $('#main-content-area') != [] ){
-		//How do i make it so it only loads on all apps?
+	// if( $('#main-content-area') != [] ){
+		//How do i make it so it only loads on all apps? -- make it spa
 		Colorapp.initialize();
-	}	
+	// }
+
 });
 
 

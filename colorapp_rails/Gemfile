@@ -32,6 +32,7 @@ gem 'miro'
 gem 'color_namer'
 gem 'httparty' 
 gem 'nokogiri'
+gem 'backbone-fetch-event'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
