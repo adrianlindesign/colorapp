@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/session' => 'session#destroy'
 
+  post '/seed' => 'apps#seed'
+
 
 
 

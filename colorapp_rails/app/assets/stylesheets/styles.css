@@ -70,6 +70,7 @@ navbar #sort-by-color {
 	width: 9.35%;
 	height: 1.5em;
 	margin: 0 0.1em 0 0.1em;
+
 }
 	.color:hover {
 		box-shadow: 3px 3px 15px lightpink;
@@ -112,7 +113,7 @@ navbar #sort-by-color {
 }
 #White {
 	background-color: white;
-	border: solid lightgrey 1px;
+	border: solid 1px antiquewhite;
 }
 
 
@@ -170,6 +171,7 @@ navbar #sort-by-color {
 
 #message-search {
 	text-align: center;
+	cursor: pointer;
 }
 
 

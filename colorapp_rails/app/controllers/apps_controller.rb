@@ -8,6 +8,24 @@ class AppsController < ApplicationController
     end
   end
 
+  def seed
+    #create app
+    a = App.create({
+      name: params["name"],
+      genre: params["genre"],
+      image_url: params["image_url"],
+      free: params["free"],
+      color1: params["color1"],
+      hex1: params["hex1"],
+      hex1_percent: params["hex1_percent"],
+      color2: params["color2"],
+      hex2: params["hex2"],
+      hex2_percent: params["hex2_percent"],
+      app_url: params["app_url"]
+    })
+
+  end
+
   def create
     app_name = params["search"]
 

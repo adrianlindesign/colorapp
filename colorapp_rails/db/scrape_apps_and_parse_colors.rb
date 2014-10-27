@@ -70,7 +70,7 @@ def scrape_app_details(url, price_is_free)
     end
     
     app_details << hash
-    puts app_details
+    puts hash
   end
   return app_details
 end

@@ -1,6 +1,7 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 var appCollection;
 var selectedColor;
+var selectedPrice = "All";
 
 
 
@@ -19,6 +20,7 @@ Colorapp.initialize = function(){
 	setUpGenreNavbar();
 	setUpSearchBar();
 	setUpTemplateToggle();
+	setUpPriceFilter();
 }
 
 
@@ -43,6 +45,7 @@ function setUpColorNavbar(){
 		}
 
 		//change the message
+		$('#message-price').text("All");
 		$('#message-color').text(selectedColor);
 		$('#message-genre').text("");
 		
@@ -62,7 +65,46 @@ function createColorCollection(color){
 	var colorSortedAppsCollection = new Colorapp.Collections.AppCollection(colorSortedArray)
 	return colorSortedAppsCollection
 }
+function setUpPriceFilter(){
+	$('#message-search').on('click', function(){
+		var sortedApps;
+		// if color is chosen, use it, else, use generic appCollection
+		if (selectedColor == undefined){
+			sortedApps = appCollection.clone(); //do not redfine appCollection, we'll need it later
+		} else {
+			sortedApps = createColorCollection(selectedColor);
+		}
 
+		var priceSortedArray;
+
+		if (selectedPrice == "All") {
+			selectedPrice = "Free";
+			priceSortedArray = sortedApps.where({free: true});
+
+		} else if (selectedPrice == "Free") {
+			selectedPrice = "Paid";
+			priceSortedArray = sortedApps.where({free: false});
+		} else if (selectedPrice == "Paid") {
+			selectedPrice = "All";
+			priceSortedArray = sortedApps;
+		}
+		$('#message-price').text(selectedPrice);
+		$('#message-genre').text("");
+
+
+
+		//generate the view
+		var priceSortedAppsCollection = new Colorapp.Collections.AppCollection(priceSortedArray)
+
+		var listView = new Colorapp.Views.AppListView({
+			collection: priceSortedAppsCollection
+		});
+		listView.render();
+		$('#main-content-area').empty();
+		$('#main-content-area').append(listView.el) // do i need this?
+
+	});
+}
 
 function setUpGenreNavbar(){
 	$('.genre').on('click', function(){
@@ -84,10 +126,13 @@ function setUpGenreNavbar(){
 		var genre = this.id
 
 		//change the message
+		$('#message-price').text("All");
 		$('#message-genre').text(genre);
+
 
 		var genreSortedArray = sortedApps.where({genre: genre})
 
+		//generate the view
 		var genreSortedAppsCollection = new Colorapp.Collections.AppCollection(genreSortedArray)
 
 		var listView = new Colorapp.Views.AppListView({

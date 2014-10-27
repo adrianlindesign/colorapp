@@ -16,11 +16,11 @@ free_app_details = scrape_app_details(url_free_apps, true)
 paid_app_details = scrape_app_details(url_paid_apps, false)
 
 paid_app_details.each do |hash|
-  HTTParty.post('http://localhost:3000/apps.json', :body => hash)
+  HTTParty.post('http://localhost:3000/seed.json', :body => hash)
 end
 
 free_app_details.each do |hash|
-  HTTParty.post('http://localhost:3000/apps.json', :body => hash)
+  HTTParty.post('http://localhost:3000/seed.json', :body => hash)
 end
 
 # skype
