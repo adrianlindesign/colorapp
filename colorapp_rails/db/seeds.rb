@@ -23,21 +23,41 @@ free_app_details.each do |hash|
   HTTParty.post('http://localhost:3000/apps.json', :body => hash)
 end
 
-#skype
-#boximize
-#acorns
-#wechat
-#whatsapp
-#Airbnb
-#Flipboard
-#Zite
-Betterment
-Citymapper
-Goodreader
-Notability
-Paperless
-Pin Drop
-OpenTable
-Yelp
-Feedly
+# skype
+# boximize
+# acorns
+# wechat
+# whatsapp
+# Airbnb
+# Flipboard
+# Zite
+# Betterment
+# Citymapper
+# Goodreader
+# Notability
+# Paperless
+# Pin Drop
+# OpenTable
+# Yelp
+# Feedly
+# Grafio
+# iThrive Journal
+# Podcasts
+# Tydlig
+# Snupps
+# Ruby%20on%20Rails
+# Quip
+# Quora
+# Skitch
+# Vevo
+# Vert
+# Werdz
+# Wordbook
+# Yummly
+# Simplenote
+# Mindnode
+# Metapho
+
+
+
 

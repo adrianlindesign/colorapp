@@ -1,5 +1,6 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 var appCollection;
+var selectedColor;
 
 
 Colorapp.initialize = function(){
@@ -23,11 +24,15 @@ Colorapp.initialize = function(){
 
 function setUpColorNavbar(){
 	$('.color').on('click', function(){
-		var color = this.id 
+		//to toggle one class
+		$('.selected-color').toggleClass('selected-color');
+		$(this).toggleClass('selected-color');
 
-		var colorSortedArray = appCollection.where({color1: color})
+		//choose color (scope is global, will be used in genre as well)
+		selectedColor = this.id
 
-		var colorSortedAppsCollection = new Colorapp.Collections.AppCollection(colorSortedArray)
+		
+		var colorSortedAppsCollection = createColorCollection(selectedColor);
 
 		var listView = new Colorapp.Views.AppListView({
 			collection: colorSortedAppsCollection
@@ -38,12 +43,19 @@ function setUpColorNavbar(){
 	});
 }
 
+function createColorCollection(color){
+	var colorSortedArray = appCollection.where({color1: color})
+	var colorSortedAppsCollection = new Colorapp.Collections.AppCollection(colorSortedArray)
+	return colorSortedAppsCollection
+}
+
 
 function setUpGenreNavbar(){
 	$('.genre').on('click', function(){
+		var colorSortedAppsCollection = createColorCollection(selectedColor);
+	
 		var genre = this.id
-
-		var genreSortedArray = appCollection.where({genre: genre})
+		var genreSortedArray = colorSortedAppsCollection.where({genre: genre})
 
 		var genreSortedAppsCollection = new Colorapp.Collections.AppCollection(genreSortedArray)
 
@@ -93,6 +105,7 @@ function setUpSearchBar(){
 				$('#main-content-area').append(appView.el);
 			});
 		}
+		$('#app-search-input')[0].value = ""; // clear content
 		
 	});
 }

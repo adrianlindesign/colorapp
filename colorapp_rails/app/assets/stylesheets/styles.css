@@ -50,6 +50,13 @@ navbar #sort-by-color {
 }
 .sort:hover{
 	cursor: pointer;
+	box-shadow: 3px 3px 15px lightpink;
+	border-color: lightpink;
+	background-color: seashell;
+
+}
+.genre {
+	border-radius: 0.5em;
 }
 
 
@@ -59,6 +66,10 @@ navbar #sort-by-color {
 	margin: 0 0.1em 0 0.1em;
 }
 
+.selected-color {
+	border: solid 3px lightblue;
+	border-radius: 1em;
+}
 
 #Red {
 	background-color: red;
