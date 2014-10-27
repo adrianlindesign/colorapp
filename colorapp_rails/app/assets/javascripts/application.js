@@ -31,3 +31,5 @@
 //= require ./backbone/views/UserListView
 //= require ./backbone/models/UserModel
 //= require ./backbone/collections/UserCollection
+
+//= require ./backbone/views/ContactSectionView

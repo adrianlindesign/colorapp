@@ -3,9 +3,9 @@ var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 Colorapp.Views.UserView = Backbone.View.extend({
 	initialize: function(){
 		this.listenTo( this.model, "change", this.render )
+		this.listenTo( this.model, "destroy", this.render )
 	},
 
-	tagName: 'section',
 	className: 'user-view',
 
 	events: {
@@ -15,16 +15,11 @@ Colorapp.Views.UserView = Backbone.View.extend({
 	// template: _.template( $('#app-template').html() ),
 	
 	render: function(){
-		this.$el.empty();
-		// this.$el.html(this.template( this.model.attributes ));
-		console.log(this.model.get('name'))
+
+		console.log(this.model.get('username'))
 
 		var entrails = ""
-		entrails += "<p>" + this.model.get('name') + "</p>"
-		// entrails += "<a href='" + this.model.get('app_url') + "'>"
-		// entrails += 	"<h5>" + this.model.get('name') + '</h5>'
-		// entrails += "</a>"
-
+		entrails += "<h3 id='user_" + this.model.get('id') + "'>" + this.model.get('username') + "</h3>"
 		this.$el.html(entrails)
 		return this
 	}

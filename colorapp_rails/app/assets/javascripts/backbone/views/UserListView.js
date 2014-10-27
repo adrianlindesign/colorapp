@@ -16,10 +16,12 @@ Colorapp.Views.UserListView = Backbone.View.extend({
 	className: 'user-list',
 
 	render: function(){
+
+
 		var self = this;
 		this.$el.empty(); // clears the el so it can be repopulated
-		_.each(this.collection.models, function(app){
-			var appView = new Colorapp.Views.AppView({model: user})
+		_.each(this.collection.models, function(user){
+			var userView = new Colorapp.Views.UserView({model: user})
 			self.$el.append( userView.render().el );
 		});
 	}

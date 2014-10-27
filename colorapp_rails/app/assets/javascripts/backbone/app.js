@@ -1,9 +1,15 @@
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
+
+
 var fullAppCollection;
+var fullAppListView;
+
 var selectedColor;
 var selectedPrice = "All";
-var fullListView;
+
+
 var fullUserCollection;
+var fullUserListView;
 
 
 
@@ -16,13 +22,16 @@ Colorapp.initialize = function(){
 	 //    }
 	});
 
-	fullUserCollection = new Colorapp.Collections.UserCollection();
-
-	fullListView = new Colorapp.Views.AppListView({
+	fullAppListView = new Colorapp.Views.AppListView({
 		collection: fullAppCollection
 	});
 		
 	// $('#main-content-area').html("<img src='/images/spinner.gif'>");
+
+	fullUserCollection = new Colorapp.Collections.UserCollection();
+	fullUserListView = new Colorapp.Views.UserListView({
+		collection: fullUserCollection
+	});
 
 	setUpColorNavbar();
 	setUpGenreNavbar();
@@ -35,7 +44,7 @@ Colorapp.initialize = function(){
 	fullAppCollection.fetch();
 	fullUserCollection.fetch();
 
-	renderAndAppendView(fullListView);
+	renderAndAppendView(fullAppListView);
 
 
 }
@@ -65,6 +74,7 @@ function setUpColorNavbar(){
 		$('#message-price').text("All");
 		$('#message-color').text(selectedColor);
 		$('#message-genre').text("");
+		$('#message-view').text("apps");
 		
 		var colorSortedAppsCollection = createColorCollection(selectedColor);
 
@@ -106,8 +116,10 @@ function setUpPriceFilter(){
 			var b = sortedApps.where({free: true});
 			priceSortedArray = a.concat(b);
 		}
+		//change the message
 		$('#message-price').text(selectedPrice);
 		$('#message-genre').text("");
+		$('#message-view').text("apps");
 
 
 
@@ -144,6 +156,7 @@ function setUpGenreNavbar(){
 		//change the message
 		$('#message-price').text("All");
 		$('#message-genre').text(genre);
+		$('#message-view').text("apps");
 
 
 		var genreSortedArray = sortedApps.where({genre: genre})
@@ -246,17 +259,43 @@ function renderAndAppendView(view){
 function setUpLinkNavBar(){
 	// set up home to show all apps
 	$('#navbar-home').click(function(){
-		renderAndAppendView(fullListView); //fullListView is a global
+		$('.selectedColor').toggleClass('selectedColor')
+
+		//change the message
+		$('#message-color').text("");
+		$('#message-view').text("apps");
+
+		renderAndAppendView(fullAppListView); //fullAppListView is a global
 	});
 
-	//set up about to show about
+	//set up About to show about
 	$('#navbar-about').click(function(){
 
 	});
+
+	//set up Contact Page
+	$('#navbar-contact').click(function(){
+		// change the message
+		$('#message-price').text("");
+		$('#message-color').text("");
+		$('#message-genre').text("");
+		$('#message-view').text("");
+		
+		var contactSectionView = new Colorapp.Views.ContactSectionView();
+		renderAndAppendView(contactSectionView);
+	});
+
+	$('#navbar-all-users').click(function(){
+
+		//change the message
+		$('#message-price').text("All");
+		$('#message-color').text("");
+		$('#message-genre').text("");
+		$('#message-view').text("users");
+
+		renderAndAppendView(fullUserListView);
+	});
 }
-
-
-
 
 
 $(function(){
