@@ -135,8 +135,8 @@ navbar #sort-by-color {
 	width: 3.8em;
 	margin: 0.75em 0.55em 0.75em 0.55em;
 	border-radius: 1em;
-	background-color: #F2F2F2;
-	display: inline-block;
+/*	background-color: #F2F2F2;
+*/	display: inline-block;
 }
 .templates-app:hover {
 	background-color: #E0E0E0;

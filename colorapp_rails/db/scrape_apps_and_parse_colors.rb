@@ -32,7 +32,7 @@ def scrape_app_details(url, price_is_free)
       app_url: ""
     }
     app_name = l.at_css('h3').content
-    app_name = app_name.split(" -")[0].split(" –")[0].split(":")[0] #get rid of subtitles
+    app_name = app_name.split("-")[0].split("–")[0].split(":")[0] #get rid of subtitles
     app_name = app_name.strip! if app_name[0] == " " || app_name[-1] == " " #trim 
     
     hash[:name] = app_name

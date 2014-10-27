@@ -9,7 +9,7 @@ Colorapp.initialize = function(){
 		collection: appCollection
 	});
 
-	// appCollection.fetch();
+	appCollection.fetch();
 
 	$('#main-content-area').append(listView.el)
 
@@ -77,6 +77,7 @@ function setUpSearchBar(){
 
 		} else { //if doesn't exist, add to database, then show
 			console.log("somebody call the API!");
+			app = encodeURIComponent(app);
 			$.post('/apps.json', {search:app}, function(result){
 				
 				//new appModel, add to collection

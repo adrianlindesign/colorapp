@@ -28,3 +28,16 @@ end
 #acorns
 #wechat
 #whatsapp
+#Airbnb
+#Flipboard
+#Zite
+Betterment
+Citymapper
+Goodreader
+Notability
+Paperless
+Pin Drop
+OpenTable
+Yelp
+Feedly
+

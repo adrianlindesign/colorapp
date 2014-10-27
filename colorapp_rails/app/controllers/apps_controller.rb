@@ -35,7 +35,7 @@ class AppsController < ApplicationController
 
     #name
     app_name_full = app_details['trackName']
-    app_name = app_name_full.split(" -")[0].split(" –")[0].split(":")[0] #get rid of subtitles
+    app_name = app_name_full.split("-")[0].split("–")[0].split(":")[0] #get rid of subtitles
     app_name = app_name.strip! if app_name[0] == " " || app_name[-1] == " " #trim 
 
     #create app
@@ -57,7 +57,7 @@ class AppsController < ApplicationController
     respond_to do |format|
       format.json { render :json => a }
     end
-    
+
   end
 
 
