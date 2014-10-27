@@ -86,7 +86,9 @@ function setUpPriceFilter(){
 			priceSortedArray = sortedApps.where({free: false});
 		} else if (selectedPrice == "Paid") {
 			selectedPrice = "All";
-			priceSortedArray = sortedApps;
+			var a = sortedApps.where({free: false});
+			var b = sortedApps.where({free: true});
+			priceSortedArray = a.concat(b);
 		}
 		$('#message-price').text(selectedPrice);
 		$('#message-genre').text("");
