@@ -26,11 +26,21 @@ Colorapp.initialize = function(){
 function setUpColorNavbar(){
 	$('.color').on('click', function(){
 		//to toggle one class
+		$('.selected-genre').toggleClass('selected-genre');
 		$('.selected-color').toggleClass('selected-color');
 		$(this).toggleClass('selected-color');
+		
 
 		//choose color (scope is global, will be used in genre as well)
 		selectedColor = this.id
+
+		if (selectedColor == "White") {
+			$('.genre').css({color: "NavajoWhite"});
+		} else if (selectedColor == "Yellow") {
+			$('.genre').css({color: "Gold"});
+		} else {
+			$('.genre').css({color: selectedColor}); // set genre color to this;		
+		}
 
 		//change the message
 		$('#message-color').text(selectedColor);
@@ -65,7 +75,12 @@ function setUpGenreNavbar(){
 		} else {
 			sortedApps = createColorCollection(selectedColor);
 		}
-		
+
+		// show selected Genre
+		$('.selected-genre').toggleClass('selected-genre');
+		$(this).toggleClass('selected-genre');
+
+
 		var genre = this.id
 
 		//change the message

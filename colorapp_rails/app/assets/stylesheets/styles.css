@@ -50,14 +50,20 @@ navbar #sort-by-color {
 }
 .sort:hover{
 	cursor: pointer;
-	box-shadow: 3px 3px 15px lightpink;
-	border-color: lightpink;
-	background-color: seashell;
-
 }
 .genre {
 	border-radius: 0.5em;
+	margin: 0.7em 1.3em 0.7em 1.3em;
+	color: tan;
 }
+	.genre:hover {
+		color: lightpink !important;
+	}
+.selected-genre {
+	color: lightpink !important;
+	font-style: bold;
+}
+
 
 
 .color {
@@ -65,11 +71,17 @@ navbar #sort-by-color {
 	height: 1.5em;
 	margin: 0 0.1em 0 0.1em;
 }
+	.color:hover {
+		box-shadow: 3px 3px 15px lightpink;
+		border-color: lightpink;
+		background-color: seashell;
+	}
 
 .selected-color {
-	border: solid 3px lightblue;
+	border: solid 3px lightpink;
 	border-radius: 1em;
 }
+
 
 #Red {
 	background-color: red;
