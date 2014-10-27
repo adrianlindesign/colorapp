@@ -26,3 +26,8 @@
 
 
 //=require backbone-fetch-event
+
+//= require ./backbone/views/UserView
+//= require ./backbone/views/UserListView
+//= require ./backbone/models/UserModel
+//= require ./backbone/collections/UserCollection

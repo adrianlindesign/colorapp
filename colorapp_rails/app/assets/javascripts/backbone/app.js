@@ -3,17 +3,20 @@ var fullAppCollection;
 var selectedColor;
 var selectedPrice = "All";
 var fullListView;
+var fullUserCollection;
 
 
 
 Colorapp.initialize = function(){
 
 	fullAppCollection = new Colorapp.Collections.AppCollection({
-		fetch: function(options) {
-	        this.trigger('fetch', this, options);
-	        return Backbone.Collection.prototype.fetch.call(this, options);
-	    }
+		// fetch: function(options) {
+	 //        this.trigger('fetch', this, options);
+	 //        return Backbone.Collection.prototype.fetch.call(this, options);
+	 //    }
 	});
+
+	fullUserCollection = new Colorapp.Collections.UserCollection();
 
 	fullListView = new Colorapp.Views.AppListView({
 		collection: fullAppCollection
@@ -30,7 +33,8 @@ Colorapp.initialize = function(){
 	
 
 	fullAppCollection.fetch();
-	
+	fullUserCollection.fetch();
+
 	renderAndAppendView(fullListView);
 
 
