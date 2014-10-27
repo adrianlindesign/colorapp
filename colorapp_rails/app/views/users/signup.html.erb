@@ -3,10 +3,19 @@
   <%= render 'home/navbar' %>
 </header>
 
-<form action="/users" method="POST">
-	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-	<input type="text" name="email" placeholder="Email">
-	<input type="text" name="username" placeholder="Username">
-	<input type="password" name="password" placeholder="Password">
-	<button>Sign up</button>
-</form>
+<div id="main-content-area">
+  <!-- <img id="loading-circle" src='/images/spinner.gif'> -->
+  <form action="/users" method="POST">
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button>Sign up</button>
+  </form>
+</div>
+
+<script>
+  //make the Home button a just for this page
+  // $('#navbar-home').text("");
+  // $('#navbar-home').text('<a href="/">Home</a>');
+</script>

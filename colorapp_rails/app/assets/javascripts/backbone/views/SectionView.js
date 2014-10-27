@@ -7,7 +7,7 @@ Colorapp.Views.SectionView = Backbone.View.extend({
 
 	// template: _.template( $('#app-template').html() ),
 	
-	render: function(title, content){
+	render: function(entrails){
 		
 		// this.$el.html(this.template( this.model.attributes ));
 
@@ -17,9 +17,7 @@ Colorapp.Views.SectionView = Backbone.View.extend({
 		$('#message-genre').text("");
 		$('#message-view').text("");
 		
-		var entrails = "";
-		entrails += "<h1>" + title + "</h1>";
-		entrails += "<p>" + content + "</p>";
+
 		this.$el.html(entrails);
 		return this;
 	}

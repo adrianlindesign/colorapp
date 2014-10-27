@@ -271,7 +271,7 @@ function setUpLinkNavBar(){
 	//set up About to show about
 	$('#navbar-about').click(function(){
 		var aboutPageView = new Colorapp.Views.SectionView();
-		aboutPageView.render("About", "This is the about page. We write stuff about ourselves here.");
+		aboutPageView.render("<h1>About</h1> <p>This is the about page. We write stuff about ourselves here. </p>");
 		$('#main-content-area').empty();
 		$('#main-content-area').append(aboutPageView.el);
 	});
@@ -296,6 +296,8 @@ function setUpLinkNavBar(){
 }
 
 
+
+var currentUserId;
 $(function(){
 	// if( $('#main-content-area') != [] ){
 		//How do i make it so it only loads on all apps? -- make it spa
