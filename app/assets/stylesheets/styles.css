@@ -41,7 +41,12 @@
 	opacity: 0.5;
 }
 
-
+.custom-navbar-right {
+	position: absolute;
+	right: 14.5em;
+	top: 0;
+	float: right;
+}
 
 img.appView {
 	height: 7.15em;

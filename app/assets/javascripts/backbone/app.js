@@ -15,7 +15,7 @@ var fullUserListView;
 
 var templateView;
 
-
+var userId = parseInt( $('#user_id').val());
 
 Colorapp.initialize = function(){
 
@@ -47,6 +47,7 @@ Colorapp.initialize = function(){
 	// setUpTemplateToggle();
 	makeTemplateView();
 	setUpTemplateViewToggle();
+	setUpTemplateShowSelect();
 
 	setUpSaveTemplate();
 
@@ -300,13 +301,46 @@ function setUpSaveTemplate(){
 		$.post('/templates', {
 			screenHTML: templateData,
 			device: 'iphone-6',
-			user_id: parseInt( $('#user_id').val() ),
+			user_id: userId,
 			template_name: $('#template-name-input').val()
 		});
 
 		// ajax post to server to create model
 		// it should then show up in the dropdown menu
 
+	});
+}
+
+function setUpTemplateMenu(){
+	console.log('#template-menu-show clicked')
+	// $('#template-menu').css({class: 'hide'});
+	$("#template-menu-show").click(function(){
+		$('#template-menu').fadeIn('slow');
+
+		// var effect = 'slide';
+		// var options = { direction: "left"}
+		// var duration = 500;
+		// $('#template-menu').toggle(effect, options, duration);
+		// $('#section_input_add').css({visibility: 'visible'});
+		$('#template-menu').toggleClass('invisible');
+	});
+}
+
+function setUpTemplateShowSelect(){
+	$('#template-select-button').click(function(){
+		console.log('show select clicked');
+
+		var templateId = $('#template-select').val();
+
+		$.get('/templates/' + templateId + '.json', function(item){
+
+			$('.iPhone-6').html(item.screenHTML);
+			if( $('.iPhone-6').hasClass('hide') ){
+				$('.iPhone-6').toggleClass('hide');
+			}
+		});
+		//identiy template from option input value
+		//ajax to server based on this
 	});
 }
 
@@ -365,20 +399,7 @@ function setUpLinkNavBar(){
 	});
 }
 
-function setUpTemplateMenu(){
-	console.log('#template-menu-show clicked')
-	// $('#template-menu').css({class: 'hide'});
-	$("#template-menu-show").click(function(){
-		$('#template-menu').fadeIn('slow');
 
-		// var effect = 'slide';
-		// var options = { direction: "left"}
-		// var duration = 500;
-		// $('#template-menu').toggle(effect, options, duration);
-		// $('#section_input_add').css({visibility: 'visible'});
-		$('#template-menu').toggleClass('invisible')
-	});
-}
 
 
 
