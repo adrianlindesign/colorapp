@@ -178,6 +178,9 @@ navbar #sort-by-color {
 	background-color: #E0E0E0;
 }
 
+li {
+	list-style: none;
+}
 .invisible {
 	opacity: 0;
 }
@@ -211,4 +214,8 @@ navbar #sort-by-color {
 
 div.modal-content{
 	border-radius: 1.5em;
+}
+
+#top-title {
+	display: inline;
 }

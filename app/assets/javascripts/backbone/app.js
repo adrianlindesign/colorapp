@@ -257,6 +257,7 @@ function setUpTemplateViewToggle(){
 	$('#template-show-button').on('click', function(){
 		$('.iPhone-6').toggleClass('hide');
 		console.log('boom, unhidden!');
+		$('#template-name-input').toggleClass('hide');
 		
 	});
 }
@@ -299,7 +300,8 @@ function setUpSaveTemplate(){
 		$.post('/templates', {
 			screenHTML: templateData,
 			device: 'iphone-6',
-			user_id: parseInt( $('#user_id').val() )
+			user_id: parseInt( $('#user_id').val() ),
+			template_name: $('#template-name-input').val()
 		});
 
 		// ajax post to server to create model
