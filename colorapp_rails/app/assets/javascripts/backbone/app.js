@@ -10,8 +10,11 @@ var selectedPrice = "All";
 
 var fullUserCollection;
 var fullUserListView;
+var selectedIconSrc;
+var selectedIcon;
 
 
+var templateView;
 
 Colorapp.initialize = function(){
 
@@ -36,10 +39,12 @@ Colorapp.initialize = function(){
 	setUpColorNavbar();
 	setUpGenreNavbar();
 	setUpSearchBar();
-	setUpTemplateToggle();
 	setUpPriceFilter();
 	setUpLinkNavBar();
 	
+	// setUpTemplateToggle();
+	setUpTemplateViewToggle();
+
 
 	fullAppCollection.fetch();
 	fullUserCollection.fetch();
@@ -243,12 +248,41 @@ function setUpSearchBar(){
 
 
 
-function setUpTemplateToggle(){
-	$('#template-button').on('click', function(){
-		$('.iPhone-6').toggleClass('hide');
-		console.log('boom, unhidden!');
+// function setUpTemplateToggle(){
+// 	$('#template-button').on('click', function(){
+// 		$('.iPhone-6').toggleClass('hide');
+// 		console.log('boom, unhidden!');
+// 	});
+// }
+
+function setUpTemplateViewToggle(){
+	$('#template-button').click(function(){
+		templateView = new Colorapp.Views.TemplateView();
+		templateView.render();
+		$('#main-content-area').append(templateView.el);
+
+		createTemplatesApps();
+
 	});
+
 }
+
+function createTemplatesApps(){
+	for (var i = 0; i < 4; i++) { // four for each row
+		_.each($('.templates-row'), function(row) { // create a view for this row
+
+			console.log(row)
+
+			var templatesAppView = new Colorapp.Views.TemplatesAppView();
+			templatesAppView.render();
+			$(row).append(templatesAppView.el);
+		});
+	}
+
+}
+
+
+
 
 function renderAndAppendView(view){
 	view.render();
@@ -297,7 +331,8 @@ function setUpLinkNavBar(){
 
 
 
-var currentUserId;
+
+var currentUserId; // for sessions?
 $(function(){
 	// if( $('#main-content-area') != [] ){
 		//How do i make it so it only loads on all apps? -- make it spa

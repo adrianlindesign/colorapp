@@ -9,7 +9,19 @@ Colorapp.Views.AppView = Backbone.View.extend({
 	className: 'app-view',
 
 	events: {
-		//something about rearranging
+		"dblclick .appView" : "identifyImageSrc"
+	},
+
+	identifyImageSrc: function(){
+		var self = this;
+
+		selectedIcon = this;
+		selectedIconSrc = this.model.get('image_url');
+
+		console.log(selectedIconSrc);
+		console.log(selectedIcon);
+		console.log(this.el)
+		//make it pulsate or indicate you dblclicked it
 	},
 
 	// template: _.template( $('#app-template').html() ),

@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require turbolinks
-// require_tree .
 //= require ./library/underscore
 //= require ./library/backbone
+
+//= require turbolinks
+// require_tree .
+
 
 
 //= require ./backbone/app
@@ -23,6 +26,7 @@
 //= require ./backbone/collections/AppCollection
 //= require ./backbone/views/AppView
 //= require ./backbone/views/AppListView
+
 
 
 //=require backbone-fetch-event
@@ -35,3 +39,8 @@
 //= require ./backbone/views/ContactSectionView
 
 //= require ./backbone/views/SectionView
+
+//= require ./backbone/models/TemplateModel
+//= require ./backbone/collections/TemplateCollection
+//= require ./backbone/views/TemplateView
+//= require ./backbone/views/TemplatesAppView

@@ -1,12 +1,12 @@
-<header id="title-header">
-  <h1>ColorApp.ly</h1>
-  <%= render 'home/navbar' %>
-</header>
 
-<!-- welcome message appears on profile page if you are this user -->
-<%if user.id == session[:user_id]%>
-	<p>Welcome to your page!</p>
-<%end%>
 
-<h1><%=user.username%></h1>
-<h3>email: <%=user.email%></h3>
+
+<div id="main-content-area">
+  <!-- welcome message appears on profile page if you are this user -->
+  <%if user.id == session[:user_id]%>
+  	<p>Welcome to your page!</p>
+  <%end%>
+
+  <h1><%=user.username%></h1>
+  <h3>email: <%=user.email%></h3>
+</div>
