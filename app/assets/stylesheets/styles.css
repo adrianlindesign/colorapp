@@ -178,8 +178,15 @@ navbar #sort-by-color {
 	background-color: #E0E0E0;
 }
 
+.invisible {
+	opacity: 0;
+}
 
-
+#template-menu {
+	background-color: blanchedalmond;
+	padding: 1em;
+	border-radius: 0.5em;
+}
 
 #message-search {
 	text-align: center;

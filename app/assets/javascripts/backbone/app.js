@@ -42,6 +42,7 @@ Colorapp.initialize = function(){
 	setUpSearchBar();
 	setUpPriceFilter();
 	setUpLinkNavBar();
+	setUpTemplateMenu();
 	
 	// setUpTemplateToggle();
 	makeTemplateView();
@@ -362,10 +363,33 @@ function setUpLinkNavBar(){
 	});
 }
 
+function setUpTemplateMenu(){
+	console.log('#template-menu-show clicked')
+	// $('#template-menu').css({class: 'hide'});
+	$("#template-menu-show").click(function(){
+		$('#template-menu').fadeIn('slow');
+
+		// var effect = 'slide';
+		// var options = { direction: "left"}
+		// var duration = 500;
+		// $('#template-menu').toggle(effect, options, duration);
+		// $('#section_input_add').css({visibility: 'visible'});
+		$('#template-menu').toggleClass('invisible')
+	});
+}
 
 
 
-var currentUserId; // for sessions?
+
+
+
+
+
+
+
+
+
+
 $(function(){
 	// if( $('#main-content-area') != [] ){
 		//How do i make it so it only loads on all apps? -- make it spa
