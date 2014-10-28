@@ -37,6 +37,9 @@
 	width: 20%;*/
 	
 }
+.faded {
+	opacity: 0.5;
+}
 
 
 
@@ -45,7 +48,7 @@ img.appView {
 	border-radius: 1.26em;
 }
 img.appView:hover {
-	margin-top: -0.5em;
+	border: solid 5px lightpink;
 }
 
 
@@ -83,14 +86,12 @@ navbar #sort-by-color {
 
 }
 	.color:hover {
-		box-shadow: 3px 3px 15px lightpink;
-		border-color: lightpink;
+		border: solid 3px lightpink !important;
 		background-color: seashell;
 	}
 
 .selected-color {
 	border: solid 3px lightpink;
-	border-radius: 1em;
 }
 
 

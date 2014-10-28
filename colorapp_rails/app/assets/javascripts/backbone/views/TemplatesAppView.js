@@ -34,12 +34,12 @@ Colorapp.Views.TemplatesAppView = Backbone.View.extend({
 		templatesAppViewStartingBackGround = this.el.style.background;
 		var cssUrl = "url(" + selectedIconSrc + ")";
 		this.$el.css({'background-image':cssUrl});
-		this.$el.css({'opacity':'0.5'});
+		this.$el.toggleClass('faded');
 	},
 
 	unPreviewIcon: function(){
 		this.$el.css({'background-image': templatesAppViewStartingBackGround});
-		this.$el.css({'opacity':'1'});
+		this.$el.toggleClass('faded');
 	},
 
 	// template: _.template( $('#app-template').html() ),
@@ -48,7 +48,6 @@ Colorapp.Views.TemplatesAppView = Backbone.View.extend({
 		// this.$el.html(this.template( this.model.attributes ));
 		// console.log(this.model.get('name'))
 
-		this.$el.html("");
 		return this
 
 	}
