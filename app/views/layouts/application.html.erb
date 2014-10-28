@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ColorApp.in</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+
+</head>
+<body>
+  <main>
+    <div class="container">
+
+      <%= render 'home/bootstrap_navbar' %>
+      <header id="title-header">
+        <h1>ColorApp.in</h1>
+        <%= render 'home/navbar' %>
+      </header>
+      <%= render 'home/navbar_sorting' %>
+
+      <h3 id="message-search"><span id="message-price">All</span> <span id="message-color"></span> <span id="message-genre"></span> <span id="message-view">apps</span></h3>
+
+      <%= yield %>  
+
+    </div> 
+  </main>
+
+
+
+
+
+
+</body>
+</html>
