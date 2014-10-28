@@ -10,11 +10,11 @@ var selectedPrice = "All";
 
 var fullUserCollection;
 var fullUserListView;
-var selectedIconSrc;
-var selectedIcon;
+
 
 
 var templateView;
+
 
 Colorapp.initialize = function(){
 

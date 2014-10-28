@@ -1,3 +1,6 @@
+var templatesAppViewStartingBackGround;
+
+
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 
 Colorapp.Views.TemplatesAppView = Backbone.View.extend({
@@ -9,17 +12,31 @@ Colorapp.Views.TemplatesAppView = Backbone.View.extend({
 	className: 'templates-app',
 
 	events: {
-		"dblclick" : 'changeThisIcon'
+		"dblclick" : 'changeIcon',
+		"mouseenter" : 'previewIcon',
+		"mouseleave" : 'unPreviewIcon'
 	},
 
-	changeThisIcon: function(){
-		console.log(selectedIcon);
-		console.log(selectedIconSrc);
+	changeIcon: function(){
+		// console.log(selectedIcon);
+		// console.log(selectedIconSrc);
 
+		var cssUrl = "url(" + selectedIconSrc + ")"; //selectedIconSrc is defined in AppView
+		this.$el.css({'background-image':cssUrl});
+		templatesAppViewStartingBackGround = cssUrl;
+
+	},
+
+	previewIcon: function(){
+		templatesAppViewStartingBackGround = this.el.style.background;
 		var cssUrl = "url(" + selectedIconSrc + ")";
 		this.$el.css({'background-image':cssUrl});
-		this.$el.css({'background-size':"100%"});
+		this.$el.css({'opacity':'0.5'});
+	},
 
+	unPreviewIcon: function(){
+		this.$el.css({'background-image': templatesAppViewStartingBackGround});
+		this.$el.css({'opacity':'1'});
 	},
 
 	// template: _.template( $('#app-template').html() ),

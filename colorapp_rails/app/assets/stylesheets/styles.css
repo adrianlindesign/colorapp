@@ -164,6 +164,7 @@ navbar #sort-by-color {
 	border-radius: 1em;
 /*	background-color: #F2F2F2;
 */	display: inline-block;
+	background-size: 100%;
 }
 .templates-app:hover {
 	background-color: #E0E0E0;

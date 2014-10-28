@@ -1,3 +1,6 @@
+var selectedIconSrc;
+var selectedIcon;
+
 var Colorapp = Colorapp || { Models: {}, Collections: {}, Views: {} };
 
 Colorapp.Views.AppView = Backbone.View.extend({
@@ -13,15 +16,16 @@ Colorapp.Views.AppView = Backbone.View.extend({
 	},
 
 	identifyImageSrc: function(){
+		//make it pulsate or indicate you dblclicked it
 		var self = this;
 
 		selectedIcon = this;
 		selectedIconSrc = this.model.get('image_url');
 
-		console.log(selectedIconSrc);
-		console.log(selectedIcon);
-		console.log(this.el)
-		//make it pulsate or indicate you dblclicked it
+		// console.log(selectedIconSrc);
+		// console.log(selectedIcon);
+		// console.log(this.el)
+
 	},
 
 	// template: _.template( $('#app-template').html() ),
