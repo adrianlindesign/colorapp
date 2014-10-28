@@ -193,7 +193,15 @@ navbar #sort-by-color {
 
 .modal-content {
 	padding: 2em;
+	
 }
 .modal-title {
 	font-weight: bold;
+}
+.modal-genre {
+	font-style: italic;
+}
+
+div.modal-content{
+	border-radius: 2em;
 }

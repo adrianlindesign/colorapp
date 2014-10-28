@@ -51,7 +51,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		entrails += '<div id="modal_' + this.model.get('id') + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">'
 		entrails += 	'<div class="modal-dialog modal-sm">'
 		entrails += 		'<div class="modal-content">'
-		entrails += 			'<h4>' + this.model.get('name') + '</h4>'
+		entrails += 			'<h4>' + this.model.get('name') + ' - <span class="modal-genre">' + this.model.get('genre') + '</span></h4>'
 		entrails +=				'<img class="appView" src="' + this.model.get('image_url') +'">'
 		entrails +=				'<br/>'
 		entrails +=				'<p class="modal-details"> <span class="modal-title"> Primary color:</span> ' + this.model.get('hex1') + "</p>" 
