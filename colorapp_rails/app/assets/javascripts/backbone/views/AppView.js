@@ -29,7 +29,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 	},
 	showModal: function(){
 		console.log('modal?');
-		$('#modal_' + this.model.get('id')).modal('toggle')
+		$('#modal_' + this.model.get('id')).modal('show')
 	},
 
 	// template: _.template( $('#app-template').html() ),
@@ -38,8 +38,8 @@ Colorapp.Views.AppView = Backbone.View.extend({
 
 
 		// this.$el.html(this.template( this.model.attributes ));
-		var entrails = '<button type="button" data-toggle="modal" data-target="modal_'+this.model.get('id')+ '">Launch modal</button>'
-		entrails += "<img data-toggle='modal' data-target='modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
+		var entrails = '<button type="button" data-toggle="modal" data-target="#modal_'+this.model.get('id')+ '">Launch modal</button>'
+		entrails += "<img data-toggle='modal' data-target='#modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
 		entrails += "<p>" + this.model.get('name') + "</p>"
 		// entrails += "<a href='" + this.model.get('app_url') + "'>"
 		// entrails += 	"<h5>" + this.model.get('name') + '</h5>'

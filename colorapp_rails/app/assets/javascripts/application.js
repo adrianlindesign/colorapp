@@ -29,6 +29,7 @@
 
 
 
+
 //=require backbone-fetch-event
 
 //= require ./backbone/views/UserView

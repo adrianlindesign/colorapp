@@ -43,6 +43,7 @@ Colorapp.initialize = function(){
 	setUpLinkNavBar();
 	
 	// setUpTemplateToggle();
+	makeTemplateView();
 	setUpTemplateViewToggle();
 
 
@@ -248,24 +249,31 @@ function setUpSearchBar(){
 
 
 
-// function setUpTemplateToggle(){
-// 	$('#template-button').on('click', function(){
-// 		$('.iPhone-6').toggleClass('hide');
-// 		console.log('boom, unhidden!');
-// 	});
-// }
-
 function setUpTemplateViewToggle(){
-	$('#template-button').click(function(){
-		templateView = new Colorapp.Views.TemplateView();
-		templateView.render();
-		$('#main-content-area').append(templateView.el);
-
-		createTemplatesApps();
-
+	$('#template-button').on('click', function(){
+		$('.iPhone-6').toggleClass('hide');
+		console.log('boom, unhidden!');
+		
 	});
-
 }
+
+function makeTemplateView(){
+	templateView = new Colorapp.Views.TemplateView({ el: $('.template.iPhone-6') });
+	templateView.render();
+	createTemplatesApps();
+}
+
+// function setUpTemplateViewToggle(){
+// 	$('#template-button').click(function(){
+// 		templateView = new Colorapp.Views.TemplateView();
+// 		templateView.render();
+// 		$('#main-content-area').append(templateView.el);
+
+// 		createTemplatesApps();
+
+// 	});
+
+// }
 
 function createTemplatesApps(){
 	for (var i = 0; i < 4; i++) { // four for each row
@@ -276,8 +284,8 @@ function createTemplatesApps(){
 			$(row).append(templatesAppView.el);
 		});
 	}
-
 }
+
 
 
 

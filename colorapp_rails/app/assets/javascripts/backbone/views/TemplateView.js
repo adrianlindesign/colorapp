@@ -5,8 +5,8 @@ Colorapp.Views.TemplateView = Backbone.View.extend({
 		console.log("Zam! new templateView");	
 	},
 
-	tagName: 'div',
-	className: 'template iPhone-6',
+	// tagName: 'div',
+	// className: 'template iPhone-6',
 
 	events: {
 		
