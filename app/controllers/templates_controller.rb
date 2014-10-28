@@ -8,10 +8,12 @@ class TemplatesController < ApplicationController
   end
 
   def create
+    binding.pry
 
     t = Template.create(
       screenHTML: params["screenHTML"],
-      device: params["device"]
+      device: params["device"],
+      user_id: params["user_id"]
     )
   end
 

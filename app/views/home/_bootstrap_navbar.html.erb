@@ -24,15 +24,7 @@
 
             <%if session[:user_id]%> <!-- these appear if logged in -->
 
-              <li> <!-- dropdown menu: templates -->
-                <form action="">
-                  <select name="template_id"><!-- user id is session-->
-                    <option value="">hi</option>
-                    <option value="">bye</option>
-                    <!-- insert ruby stuff to generate templates -->
-                  </select>                
-                </form>
-              </li>
+
               <li><button type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button></li>
               <li><button type="button" class="btn btn-default" id="template-show-button"><span class="glyphicon glyphicon-plus"></span></button></li>
 

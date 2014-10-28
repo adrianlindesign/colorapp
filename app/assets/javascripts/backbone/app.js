@@ -297,7 +297,8 @@ function setUpSaveTemplate(){
 
 		$.post('/templates', {
 			screenHTML: templateData,
-			device: 'iphone-6'
+			device: 'iphone-6',
+			user_id: parseInt( $('#user_id').val() )
 		});
 
 		// ajax post to server to create model
