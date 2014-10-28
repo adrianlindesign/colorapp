@@ -13,15 +13,15 @@ Colorapp.Views.AppView = Backbone.View.extend({
 
 	events: {
 		"click .appView" : "identifyImageSrc",
-		"dblclick .appView" : "showModal"
+		"dblclick .appView" : "showModal",
 	},
 
 	identifyImageSrc: function(){
 		//make it pulsate or indicate you dblclicked it
-		this.$el.effect('shake');
+		this.$el.effect('bounce');
 		selectedIcon = this;
 		selectedIconSrc = this.model.get('image_url');
-
+		$('#flash_' + this.model.get('id')).toggleClass('hide').delay(150).effect('puff');
 		// console.log(selectedIconSrc);
 		// console.log(selectedIcon);
 		// console.log(this.el)
@@ -31,7 +31,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		console.log('modal?');
 		console.log('#modal_' + this.model.get('id'))
 		console.log($('#modal_' + this.model.get('id')))
-		$('#modal_' + this.model.get('id')).modal('show')
+		$('#modal_' + this.model.get('id')).modal('toggle')
 	},
 
 	// template: _.template( $('#app-template').html() ),
@@ -41,8 +41,14 @@ Colorapp.Views.AppView = Backbone.View.extend({
 
 		// this.$el.html(this.template( this.model.attributes ));
 		var entrails = ""
+
+		entrails += '<div class="flash-notice hide" id="flash_' + this.model.get('id') +'">'
+		entrails += 	'<p> Selected!</p>'
+		// entrails += 	'</p> (double click to view details) </p>'
+		entrails += '</div>'
+		
 		// entrails += '<button type="button" data-toggle="modal" data-target="#modal_'+this.model.get('id')+ '">Launch modal</button>'
-		entrails += "<img data-toggle='modal' data-target='#modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
+		entrails += "<img data-target='#modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
 		// entrails += "<p>" + this.model.get('name') + "</p>"
 		// entrails += "<a href='" + this.model.get('app_url') + "'>"
 		// entrails += 	"<p>" + this.model.get('name') + '</p>'
@@ -59,10 +65,12 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		entrails +=				'<br/>'
 		entrails +=				'<p class="modal-details"> <span class="modal-title">Secondary color:</span> ' + this.model.get('hex2') + '</p>'
 		entrails += 			'<p class="modal-details"> <span class="modal-title">Percentage:</span> ' + this.model.get('hex2_percent') +'%</p>'
-		entrails +=				'<a href="' + this.model.get('app_url') + '"> Learn more </a>'  
+		entrails +=				'<a href="' + this.model.get('app_url') + '"> Learn more & download here! </a>'  
 		entrails += 		'</div>'
 		entrails += 	'</div>'
 		entrails += '</div>'
+
+
 
 		this.$el.html(entrails)
 

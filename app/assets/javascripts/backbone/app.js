@@ -16,6 +16,7 @@ var fullUserListView;
 var templateView;
 
 
+
 Colorapp.initialize = function(){
 
 	fullAppCollection = new Colorapp.Collections.AppCollection({
