@@ -27,7 +27,7 @@
 }
 
 .app-view {
-	
+
 	margin: 0.75em;
 	padding: 0.75em;
 	float: left;
@@ -36,13 +36,18 @@
 	border-radius: 1.5em;
 	width: 20%;*/
 	
-
 }
+
+
 
 img.appView {
 	height: 7.15em;
 	border-radius: 1.26em;
 }
+img.appView:hover {
+	margin-top: -0.5em;
+}
+
 
 
 navbar #sort-by-color {
@@ -51,9 +56,10 @@ navbar #sort-by-color {
 .sort{
 	display: inline-block;
 }
-.sort:hover{
-	cursor: pointer;
-}
+	.sort:hover{
+		cursor: pointer;
+
+	}
 .genre {
 	border-radius: 0.5em;
 	margin: 0.7em 1.3em 0.7em 1.3em;
@@ -61,6 +67,7 @@ navbar #sort-by-color {
 }
 	.genre:hover {
 		color: lightpink !important;
+
 	}
 .selected-genre {
 	color: lightpink !important;
