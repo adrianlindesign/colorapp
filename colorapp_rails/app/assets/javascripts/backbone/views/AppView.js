@@ -17,8 +17,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 
 	identifyImageSrc: function(){
 		//make it pulsate or indicate you dblclicked it
-		var self = this;
-
+		this.$el.effect('shake');
 		selectedIcon = this;
 		selectedIconSrc = this.model.get('image_url');
 
@@ -31,7 +30,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 	// template: _.template( $('#app-template').html() ),
 	
 	render: function(){
-		this.$el.empty();
+
 		// this.$el.html(this.template( this.model.attributes ));
 		console.log(this.model.get('name'))
 
@@ -43,6 +42,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		// entrails += "</a>"
 
 		this.$el.html(entrails)
+
 		return this
 	}
 

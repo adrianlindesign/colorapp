@@ -25,6 +25,9 @@ Colorapp.Views.TemplatesAppView = Backbone.View.extend({
 		this.$el.css({'background-image':cssUrl});
 		templatesAppViewStartingBackGround = cssUrl;
 
+		this.$el.effect( "pulsate", "fast" );
+		this.$el.css({'opacity':'1'});
+		
 	},
 
 	previewIcon: function(){
