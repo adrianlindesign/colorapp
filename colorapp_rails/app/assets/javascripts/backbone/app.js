@@ -271,8 +271,6 @@ function createTemplatesApps(){
 	for (var i = 0; i < 4; i++) { // four for each row
 		_.each($('.templates-row'), function(row) { // create a view for this row
 
-			console.log(row)
-
 			var templatesAppView = new Colorapp.Views.TemplatesAppView();
 			templatesAppView.render();
 			$(row).append(templatesAppView.el);

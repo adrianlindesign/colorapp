@@ -9,9 +9,18 @@ Colorapp.Views.TemplatesAppView = Backbone.View.extend({
 	className: 'templates-app',
 
 	events: {
-		
+		"dblclick" : 'changeThisIcon'
 	},
 
+	changeThisIcon: function(){
+		console.log(selectedIcon);
+		console.log(selectedIconSrc);
+
+		var cssUrl = "url(" + selectedIconSrc + ")";
+		this.$el.css({'background-image':cssUrl});
+		this.$el.css({'background-size':"100%"});
+
+	},
 
 	// template: _.template( $('#app-template').html() ),
 	
