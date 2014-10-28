@@ -189,3 +189,11 @@ navbar #sort-by-color {
 	#message-search:hover {
 		color: pink;
 	}
+
+
+.modal-content {
+	padding: 2em;
+}
+.modal-title {
+	font-weight: bold;
+}

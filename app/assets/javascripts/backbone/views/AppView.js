@@ -45,16 +45,20 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		entrails += "<img data-toggle='modal' data-target='#modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
 		// entrails += "<p>" + this.model.get('name') + "</p>"
 		// entrails += "<a href='" + this.model.get('app_url') + "'>"
-		// entrails += 	"<h5>" + this.model.get('name') + '</h5>'
+		// entrails += 	"<p>" + this.model.get('name') + '</p>'
 		// entrails += "</a>"
 
 		entrails += '<div id="modal_' + this.model.get('id') + '" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">'
 		entrails += 	'<div class="modal-dialog modal-sm">'
 		entrails += 		'<div class="modal-content">'
-		entrails += 			'<h6>' + this.model.get('name') + '</h6>'
-		entrails +=				'<img src="' + this.model.get('image_url') +'">'
-		entrails +=				'<p class="modal-details"> Primary color: ' + this.model.get('hex1') + ", percentage: " + this.model.get('hex1_percent') +'</p>'
-		entrails +=				'<p class="modal-details"> Secondary color: ' + this.model.get('hex2') + ", percentage: " + this.model.get('hex2_percent') + '</p>'
+		entrails += 			'<h4>' + this.model.get('name') + '</h4>'
+		entrails +=				'<img class="appView" src="' + this.model.get('image_url') +'">'
+		entrails +=				'<br/>'
+		entrails +=				'<p class="modal-details"> <span class="modal-title"> Primary color:</span> ' + this.model.get('hex1') + "</p>" 
+		entrails += 			'<p class="modal-details"> <span class="modal-title">Percentage:</span> ' + this.model.get('hex1_percent') +'%</p>'
+		entrails +=				'<br/>'
+		entrails +=				'<p class="modal-details"> <span class="modal-title">Secondary color:</span> ' + this.model.get('hex2') + '</p>'
+		entrails += 			'<p class="modal-details"> <span class="modal-title">Percentage:</span> ' + this.model.get('hex2_percent') +'%</p>'
 		entrails +=				'<a href="' + this.model.get('app_url') + '"> Learn more </a>'  
 		entrails += 		'</div>'
 		entrails += 	'</div>'
