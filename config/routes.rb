@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   post '/seed' => 'apps#seed'
 
-
+  get '/templates' => 'templates#index'
+  post '/templates' => 'templates#create'
 
 
 #  Prefix Verb   URI Pattern                             Controller#Action
