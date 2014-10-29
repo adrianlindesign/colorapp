@@ -8,6 +8,8 @@
 
 
     <div class"top-left">
+
+
       <!-- searchbar -->
       <navbar id="searchbar" class="navbar-leftside">
 
@@ -28,6 +30,8 @@
           </li>
         </ul>
       </navbar>
+
+
     </div>
 
 
@@ -55,7 +59,7 @@
             <li><button title="Go to your profile" id="profile-page" class="btn btn-default"><span class="glyphicon glyphicon-user"></span></button></li>
 
             <li> <!--logout button-->
-              <form action="/session" method="POST">
+              <form id="logout-button" action="/session" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
                 <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
                 <button title="Log out" id="logout-button"  type="submit" class="btn btn-default"><span class="glyphicon glyphicon-log-out"></span></button>
