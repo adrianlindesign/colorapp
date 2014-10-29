@@ -54,26 +54,33 @@
       <li><h5 class="navbar-links-item" id="navbar-about" href="#"> About </h5></li>
       <li><h5 class="navbar-links-item" id="navbar-contact" href="#"> Contact </h5></li>
       
-
-      <li> <!--template menu--> 
-        <button class="template-menu btn btn-default" id="template-menu-show"><span class="glyphicon glyphicon-phone"></button>
+      <!--template menu--> 
+      <li> <!-- template menu - template show button -->
+        <button title="Show/hide template menu" class="template-menu btn btn-default" id="template-menu-show"><span class="glyphicon glyphicon-phone"></button>
       </li>
       <li>
         <div class="template-menu invisible" id="template-menu">
-          <button type="button" class="btn btn-default" id="template-show-button"><span class="glyphicon glyphicon-plus "></span></button>
+          <!-- template menu - new button -->
+          <button title="Show/hide template" type="button" class="btn btn-default" id="template-show-button"><span class="glyphicon glyphicon-plus "></span></button>
+            
+          <!-- template menu - save button -->
+          <button title="Save as new template" type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button>
 
-          <button type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button>
-
+          <!-- template menu - name this template -->
           <input id="template-name-input" class="hide" type="text" name="template_name" placeholder="Name this template!">
 
-          <select name="template_id" id="template-select"><!-- user id is session-->
+          <!-- template menu - select -->
+          <select title="show previous templates" name="template_id" id="template-select"><!-- user id is session-->
             <%if templates%>
               <%templates.each do |t|%>
                 <option value="<%=t['id']%>"><%=t.name%></option>
               <%end%>
             <%end%>
-          </select>                
-          <button class="btn btn-default" id="template-select-button"> Show </button>
+          </select>   <!-- template menu - template select button -->             
+          <button title="Load selected template" class="btn btn-default" id="template-select-button"><span class="glyphicon glyphicon-folder-open"></span></button>
+          
+          <!-- template menu - template delete button -->
+          <button class="btn btn-default"><span title="Delete selected template" class="glyphicon glyphicon-remove" id="template-delete-button"></span></button>
         </div>
 
 

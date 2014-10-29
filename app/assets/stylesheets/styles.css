@@ -26,6 +26,7 @@
 
 }
 
+
 .app-view {
 
 	margin: 0.75em;
@@ -135,7 +136,9 @@ navbar #sort-by-color {
 
 
 
-
+.flash-notice {
+	color: lightpink;
+}
 
 .template {
 	height: 698px;
@@ -205,6 +208,9 @@ li {
 		color: pink;
 	}
 
+button {
+	background: snow !important;
+}
 
 .modal-content {
 	padding: 2em;

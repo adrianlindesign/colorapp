@@ -49,6 +49,7 @@ Colorapp.initialize = function(){
 	setUpTemplateViewToggle();
 	setUpTemplateShowSelect();
 
+	setUpTemplateDelete();
 	setUpSaveTemplate();
 
 
@@ -344,6 +345,13 @@ function setUpTemplateShowSelect(){
 	});
 }
 
+function setUpTemplateDelete(){
+	$('#template-delete-button').click(function(){
+		console.log('clicked delete button!');
+		
+	});
+}
+
 // --------------------------------------------------------------------------------------
 
 
@@ -375,7 +383,12 @@ function setUpLinkNavBar(){
 	//set up About to show about
 	$('#navbar-about').click(function(){
 		var aboutPageView = new Colorapp.Views.SectionView();
-		aboutPageView.render("<h1>About</h1> <p>This is the about page. We write stuff about ourselves here. </p>");
+		var entrails = "";
+		entrails += "<h1>About</h1>"
+		entrails += "<p>ColorApp.in is an app that lets you sort apps by color and make templates to plan out your colorful phone!</p>"; 
+		entrails += "<p>Open the template, click icons, and place them on the phone template. Save templates too!";
+		
+		aboutPageView.render(entrails);
 		$('#main-content-area').empty();
 		$('#main-content-area').append(aboutPageView.el);
 	});

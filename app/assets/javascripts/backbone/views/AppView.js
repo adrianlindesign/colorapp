@@ -48,7 +48,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		entrails += '</div>'
 		
 		// entrails += '<button type="button" data-toggle="modal" data-target="#modal_'+this.model.get('id')+ '">Launch modal</button>'
-		entrails += "<img data-target='#modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
+		entrails += "<img title='Click to select, double-click to show more info' data-target='#modal_" + this.model.get('id') + "' class='appView' src='" + this.model.get('image_url') + "'/>"
 		// entrails += "<p>" + this.model.get('name') + "</p>"
 		// entrails += "<a href='" + this.model.get('app_url') + "'>"
 		// entrails += 	"<p>" + this.model.get('name') + '</p>'
