@@ -53,10 +53,10 @@
 
 
 #title-colorappin {
-	height: 4.5em;
+	height: 6.5em;
 	margin-left: 17em;
 	margin-top: 0.5em;
-	position: fixed;
+	position: absolute;
 
 }
 #title-colorappin:hover {
