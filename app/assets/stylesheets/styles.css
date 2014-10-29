@@ -28,7 +28,7 @@
 
 .navbar-rightside {
 	float: right;
-
+	clear: right;
 	right: 0em;
 
 }
@@ -39,7 +39,9 @@
 	margin-top: 4.5%;
 }
 
-
+	.navbar-rightside a button {
+		float: right;
+	}
 
 	.navbar-rightside form {
 		clear: both;
@@ -186,17 +188,7 @@ div.modal-content{
 		color: lightseagreen;
 	}
 
-#profile-page {
-	position: relative;
-	right: 1.35em;
-	top: -1.55em;
-}
 
-#logout-button {
-	position: absolute;
-	top: 1.4em;
-	right: 2.8em;
-}
 
 .app-view {
 
