@@ -56,6 +56,7 @@ Colorapp.initialize = function(){
 	fullAppCollection.fetch();
 	fullUserCollection.fetch();
 	setUpProfilePage();
+	setUpShowAllAppOnClickTitle();
 
 	renderAndAppendView(fullAppListView);
 
@@ -396,12 +397,9 @@ function renderAndAppendView(view){
 }
 
 
-
-
-
-function setUpLinkNavBar(){
+function setUpShowAllAppOnClickTitle(){
 	// set up home to show all apps
-	$('#navbar-home').click(function(){
+	$('#title-colorappin').click(function(){
 		$('.selectedColor').toggleClass('selectedColor')
 
 		//change the message
@@ -410,6 +408,11 @@ function setUpLinkNavBar(){
 
 		renderAndAppendView(fullAppListView); //fullAppListView is a global
 	});
+}
+
+
+function setUpLinkNavBar(){
+
 
 	//set up About to show about
 	$('#navbar-about').click(function(){

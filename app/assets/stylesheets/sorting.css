@@ -6,12 +6,12 @@
 
 }
 	.color:hover {
-		border: solid 3px lightpink !important;
+		border: solid 3px lightseagreen !important;
 		background-color: seashell;
 	}
 
 .selected-color {
-	border: solid 3px lightpink;
+	border: solid 3px lightseagreen;
 }
 
 
@@ -60,11 +60,11 @@
 	color: tan;
 }
 	.genre:hover {
-		color: lightpink !important;
+		color: lightseagreen !important;
 
 	}
 .selected-genre {
-	color: lightpink !important;
+	color: lightseagreen !important;
 	font-style: bold;
 }
 
@@ -82,5 +82,4 @@
 }
 
 #navbar-sorting-bar {
-	margin-top: 7%;
 }

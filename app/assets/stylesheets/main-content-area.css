@@ -16,11 +16,11 @@ div.modal-content{
 }
 
 .app-list {
-
 	margin-left: 2em;
 	padding-left: 2em;
 
 }
+
 
 
 .app-view {
@@ -28,24 +28,26 @@ div.modal-content{
 	margin: 0.75em;
 	padding: 0.75em;
 	float: left;
-	position: relative;
-
 /*	background-color: blanchedalmond;
 	border-radius: 1.5em;
 	width: 20%;*/
 	
 }
-
+#main-content-bottom-bumper {
+	min-height: 5em;
+	clear: both;
+}
 img.appView {
 	height: 7.15em;
 	border-radius: 1.26em;
+	clear: both;
 }
 img.appView:hover {
-	border: solid 5px lightpink;
+	border: solid 5px lightseagreen;
 }
 
 .flash-notice {
-	color: lightpink;
+	color: lightseagreen;
 }
 
 #navbar-account {

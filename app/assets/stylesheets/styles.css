@@ -26,9 +26,16 @@
 .navbar-rightside {
 	float: right;
 	clear: right;
-	right: -2em;
+	right: 0em;
 
 }
+
+#hero-image {
+	width: 105%;
+	margin-left: -1.5%;
+	margin-top: 4.5%;
+}
+
 	.navbar-rightside a button {
 		float: right;
 	}
@@ -49,16 +56,19 @@
 	position: fixed;
 
 }
+#title-colorappin:hover {
+	cursor: pointer;
+}
 
 #navbar-administrative-tasks {
-
+	margin-bottom: -1em;
 }
 
 
 
-
-
-
+.glyphicon {
+	color: lightseagreen;
+}
 
 
 li {
