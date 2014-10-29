@@ -49,42 +49,40 @@
 
   <navbar id="navbar-links">
     <ul>
-      <li><h5 class="navbar-links-item" id="navbar-home" > Home </h5></li>
-      <li><h5 class="navbar-links-item" id="navbar-all-users" > All Users</h5></li> 
+      <li><h5 class="navbar-links-item" id="navbar-home" >All</h5></li>
+<!--       <li><h5 class="navbar-links-item" id="navbar-all-users" > All Users</h5></li>  -->
       <li><h5 class="navbar-links-item" id="navbar-about" href="#"> About </h5></li>
       <li><h5 class="navbar-links-item" id="navbar-contact" href="#"> Contact </h5></li>
       
       <!--template menu--> 
       <li> <!-- template menu - template show button -->
-        <button title="Show/hide template menu" class="template-menu btn btn-default" id="template-menu-show"><span class="glyphicon glyphicon-phone"></button>
+        <button title="Show/hide template menu" class="template-menu btn btn-default" id="template-menu-show"><span class="glyphicon glyphicon-plus"></button>
       </li>
-      <li>
-        <div class="template-menu invisible" id="template-menu">
-          <!-- template menu - new button -->
-          <button title="Show/hide template" type="button" class="btn btn-default" id="template-show-button"><span class="glyphicon glyphicon-plus "></span></button>
-            
-          <!-- template menu - save button -->
-          <button title="Save as new template" type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button>
+        
+      <!-- template menu - new button -->
+      <li><button title="Show/hide template" type="button" class="btn btn-default" id="template-show-button"><span class="glyphicon glyphicon-phone"></span></button></li>
+        
+      <!-- template menu - save button -->
+      <li><button title="Save as new template" type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button></li>
 
-          <!-- template menu - name this template -->
-          <input id="template-name-input" class="hide" type="text" name="template_name" placeholder="Name this template!">
-
-          <!-- template menu - select -->
-          <select title="show previous templates" name="template_id" id="template-select"><!-- user id is session-->
-            <%if templates%>
-              <%templates.each do |t|%>
-                <option value="<%=t['id']%>"><%=t.name%></option>
-              <%end%>
-            <%end%>
-          </select>   <!-- template menu - template select button -->             
-          <button title="Load selected template" class="btn btn-default" id="template-select-button"><span class="glyphicon glyphicon-folder-open"></span></button>
-          
-          <!-- template menu - template delete button -->
-          <button class="btn btn-default"><span title="Delete selected template" class="glyphicon glyphicon-remove" id="template-delete-button"></span></button>
-        </div>
+      <!-- template menu - name this template -->
+      <li><input id="template-name-input" class="hide" type="text" name="template_name" placeholder="Name this template!"></li>
 
 
-      </li>
+      <!-- template menu - template select button -->        <li><button title="Load selected template" class="btn btn-default" id="template-select-button"><span class="glyphicon glyphicon-folder-open"></span></button></li>
+      <!-- template menu - select -->
+      <li><select title="show previous templates" name="template_id" id="template-select"><!-- user id is session-->
+        <%if templates%>
+          <%templates.each do |t|%>
+            <option value="<%=t['id']%>"><%=t.name%></option>
+          <%end%>
+        <%end%>
+      </select></li>   
+
+      
+      <!-- template menu - template delete button -->
+      <li><button id="template-delete-button" class="btn btn-default invisible"><span title="Delete selected template" class="glyphicon glyphicon-remove" ></span></button></li>
+  
     </ul>
 
 

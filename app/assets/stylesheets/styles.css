@@ -20,7 +20,7 @@
 	}
 
 .app-list {
-	background-color: beige;
+
 	margin: 2em;
 	padding: 2em;
 
@@ -182,7 +182,7 @@ navbar #sort-by-color {
 */	display: inline-block;
 	background-size: 100%;
 }
-.templates-app:hover {
+.templates-app-hover:hover {
 	background-color: #E0E0E0;
 }
 
@@ -229,4 +229,20 @@ div.modal-content{
 
 #top-title {
 	display: inline;
+}
+
+.glyphicon-plus:hover {
+	color: limegreen;
+}
+.glyphicon-save:hover {
+	color: deepskyblue;
+}
+.glyphicon-folder-open:hover{
+	color: gold;
+}
+.glyphicon-remove:hover {
+	color: red;
+}
+.glyphicon-phone:hover {
+	color: silver;
 }

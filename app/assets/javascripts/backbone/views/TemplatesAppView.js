@@ -9,7 +9,7 @@ Colorapp.Views.TemplatesAppView = Backbone.View.extend({
 	},
 
 	tagName: 'div',
-	className: 'templates-app',
+	className: 'templates-app-hover templates-app',
 
 	events: {
 		"click" : 'changeIcon',

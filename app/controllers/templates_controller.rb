@@ -8,7 +8,7 @@ class TemplatesController < ApplicationController
   end
 
   def create
-    binding.pry
+
     t = Template.create(
       screenHTML: params["screenHTML"],
       device: params["device"],
@@ -27,7 +27,6 @@ class TemplatesController < ApplicationController
 
   def destroy
 
-    binding.pry
     t = Template.find(params[:id])
     t.destroy
 

@@ -42,7 +42,7 @@ Colorapp.initialize = function(){
 	setUpSearchBar();
 	setUpPriceFilter();
 	setUpLinkNavBar();
-	setUpTemplateMenu();
+	// setUpTemplateMenu();
 	
 	// setUpTemplateToggle();
 	makeTemplateView();
@@ -221,7 +221,13 @@ function setUpSearchBar(){
 			});
 
 			renderAndAppendView(appView);
+		} 
+
+		// show Whole collection if they backspace all the way
+		if ( $('#app-search-input').val() == "" ) {
+			renderAndAppendView(fullAppListView);
 		}
+
 	});
 
 	// for enter
@@ -247,7 +253,7 @@ function setUpSearchBar(){
 				renderAndAppendView(appView);
 			});
 			$('#app-search-input')[0].value = ""; // clear content
-		}
+		} 
 	});
 }
 
@@ -296,40 +302,41 @@ function createTemplatesApps(){
 
 function setUpSaveTemplate(){
 	$('#template-save-button').click(function(){
-		var templateData = $('.iPhone-6').html();
-		console.log(templateData);
+		var templateName = $('#template-name-input').val();
+		var response = confirm("Save " + templateName + "?");
 
-		$.post('/templates', {
-			screenHTML: templateData,
-			device: 'iphone-6',
-			user_id: userId,
-			template_name: $('#template-name-input').val()
-		});
+		if(response == true){
+			var templateData = $('.iPhone-6').html();
+			console.log(templateData);
 
-		// ajax post to server to create model
-		// it should then show up in the dropdown menu
-
+			$.post('/templates', {
+				screenHTML: templateData,
+				device: 'iphone-6',
+				user_id: userId,
+				template_name: $('#template-name-input').val()
+			});
+		}
 	});
 }
 
-function setUpTemplateMenu(){
-	console.log('#template-menu-show clicked')
-	// $('#template-menu').css({class: 'hide'});
-	$("#template-menu-show").click(function(){
-		$('#template-menu').fadeIn('slow');
+// function setUpTemplateMenu(){
+// 	console.log('#template-menu-show clicked')
+// 	// $('#template-menu').css({class: 'hide'});
+// 	$("#template-menu-show").click(function(){
+// 		$('#template-menu').fadeIn('slow');
 
-		// var effect = 'slide';
-		// var options = { direction: "left"}
-		// var duration = 500;
-		// $('#template-menu').toggle(effect, options, duration);
-		// $('#section_input_add').css({visibility: 'visible'});
-		$('#template-menu').toggleClass('invisible');
-	});
-}
+// 		// var effect = 'slide';
+// 		// var options = { direction: "left"}
+// 		// var duration = 500;
+// 		// $('#template-menu').toggle(effect, options, duration);
+// 		// $('#section_input_add').css({visibility: 'visible'});
+// 		$('#template-menu').toggleClass('invisible');
+// 	});
+// }
 
 function setUpTemplateShowSelect(){
 	$('#template-select-button').click(function(){
-		console.log('show select clicked');
+		$('#template-delete-button').toggleClass('invisible');
 
 		var templateId = $('#template-select').val();
 
@@ -339,23 +346,26 @@ function setUpTemplateShowSelect(){
 			if( $('.iPhone-6').hasClass('hide') ){
 				$('.iPhone-6').toggleClass('hide');
 			}
+			$('.templates-app').removeClass('templates-app:hover'); // this is to stop it from previewing so that people know they can't edit
+
 		});
 		setUpTemplateDelete(templateId); //every i load a previous template, the template_id variable gets reset and sent into the setUpTemplateDelete function
-		$('.templates-app').removeClass('templates-app'); // this is to stop it from previewing so that people know they can't edit
-
+		
 	});
 }
 
 function setUpTemplateDelete(thisTemplateId){
 	$('#template-delete-button').click(function(){
-		console.log('clicked delete button!');
-		console.log(thisTemplateId);
+		
+		var response = confirm("Delete this template?");
 
-		$.ajax({
-			url: '/templates/' + thisTemplateId,
-			type: "DELETE",
-			data: {id: thisTemplateId} 
-		});
+		if (response == true ){
+			$.ajax({
+				url: '/templates/' + thisTemplateId,
+				type: "DELETE",
+				data: {id: thisTemplateId} 
+			});
+		}	
 
 	});
 }
@@ -408,16 +418,16 @@ function setUpLinkNavBar(){
 		renderAndAppendView(contactSectionView);
 	});
 
-	$('#navbar-all-users').click(function(){
+	// $('#navbar-all-users').click(function(){
 
-		//change the message
-		$('#message-price').text("All");
-		$('#message-color').text("");
-		$('#message-genre').text("");
-		$('#message-view').text("users");
+	// 	//change the message
+	// 	$('#message-price').text("All");
+	// 	$('#message-color').text("");
+	// 	$('#message-genre').text("");
+	// 	$('#message-view').text("users");
 
-		renderAndAppendView(fullUserListView);
-	});
+	// 	renderAndAppendView(fullUserListView);
+	// });
 }
 
 
