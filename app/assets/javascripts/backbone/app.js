@@ -115,6 +115,8 @@ function setUpPriceFilter(){
 			sortedApps = createColorCollection(selectedColor);
 		}
 
+		$('.selected-genre').toggleClass('selected-genre');
+
 		var priceSortedArray;
 
 		if (selectedPrice == "All") {
