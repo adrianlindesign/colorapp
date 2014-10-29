@@ -1,0 +1,86 @@
+
+.color {
+	width: 9.35%;
+	height: 1.5em;
+	margin: 0 0.1em 0 0.1em;
+
+}
+	.color:hover {
+		border: solid 3px lightpink !important;
+		background-color: seashell;
+	}
+
+.selected-color {
+	border: solid 3px lightpink;
+}
+
+
+#Red {
+	background-color: red;
+}
+#Orange {
+	background-color: orange;
+}
+#Yellow {
+	background-color: yellow;
+}
+#Green {
+	background-color: green;
+}
+#Blue {
+	background-color: blue;
+}
+#Violet {
+	background-color: violet;
+}
+#Brown {
+	background-color: brown;
+}
+#Black {
+	background-color: black;
+}
+#Grey {
+	background-color: grey;
+}
+#White {
+	background-color: white;
+	border: solid 1px antiquewhite;
+}
+
+.sort{
+	display: inline-block;
+}
+	.sort:hover{
+		cursor: pointer;
+
+	}
+.genre {
+	border-radius: 0.5em;
+	margin: 0.7em 1.3em 0.7em 1.3em;
+	color: tan;
+}
+	.genre:hover {
+		color: lightpink !important;
+
+	}
+.selected-genre {
+	color: lightpink !important;
+	font-style: bold;
+}
+
+
+
+#sort-by-color {
+	margin-left: 1.75em
+}
+	#sort-by-color div {
+		margin: 1em 0 0 0;
+	}
+
+#sort-by-genre ul {
+	text-align: center;
+}
+
+#navbar-sorting-bar {
+	margin-top: 7%;
+}

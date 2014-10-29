@@ -1,0 +1,29 @@
+
+#template-menu {
+	padding: 1em;
+	border-radius: 0.5em;
+
+}
+li {
+	display: inline;
+}
+
+#navbar-user-tasks {
+	display: inline;
+}
+
+#searchbar {
+	margin: 2em 0 0 2em;
+}
+
+#message-search {
+	text-align: center;
+	cursor: pointer;
+	float: left;
+	margin-left: 22%;
+	
+}
+
+	#message-search:hover {
+		color: pink;
+	}

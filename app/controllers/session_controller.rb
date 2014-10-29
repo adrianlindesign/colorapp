@@ -9,8 +9,8 @@ class SessionController < ApplicationController
       redirect_to "/"
       
     else
-      @error = true
-      render :error
+      
+      redirect_to "/"
     end
   end
 

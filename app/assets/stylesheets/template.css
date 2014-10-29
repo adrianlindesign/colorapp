@@ -1,0 +1,51 @@
+
+.templates-screen {
+	margin-left: 8.2%;
+}
+.templates-row {
+
+}
+.first-row {
+	margin-top: 7.4em;
+}
+.last-row {
+	margin-top: 2em;
+}
+.templates-app {
+	height: 3.8em;
+	width: 3.8em;
+	margin: 0.75em 0.55em 0.75em 0.55em;
+	border-radius: 1em;
+/*	background-color: #F2F2F2;
+*/	display: inline-block;
+	background-size: 100%;
+}
+.templates-app-hover:hover {
+	background-color: #E0E0E0;
+}
+
+#template-menu {
+	position: fixed;
+}
+.template {
+	height: 698px;
+	width: 343px;
+	/*float: right;*/
+
+	position: fixed;
+ 	bottom: 2.3%;
+  	right: 2.3%;
+
+}
+
+.iPhone-6 {
+	background-image: url(../images/template_iphone6.png);
+	background-size: 100%;
+	z-index: 100000;
+
+
+}
+/*	.iPhone-5 img {
+		height: 100%;
+	}
+*/

@@ -1,66 +1,32 @@
-#title-header {
-	text-align: center;
-	margin-left: -1%;
-	margin-top: 1%;
-}
-	#title-header h1 {
-		background-color: pink;
-		padding: 0.75em 0 0.5em 0;
-		margin: -0.25em 0 0 0;
-	}
-	#top-title {
-		width: 101%;
-		display: inline-block;
-	}
+
+
 	#navbar-links ul {
-		background-color: seashell;
 		padding: 1em 0 1em 0;
 		margin: -1em 0 0 0;
 	}
 
 		#navbar-links li {
 			display: inline-block;
-			margin: 0.5em 1em 0 1em;
+			margin: 0 1em 0 1em;
 		}
 	.navbar-links-item {
 		cursor: pointer;
 	}
 
-.app-list {
-
-	margin: 2em;
-	padding: 2em;
-
-}
-
-
-.app-view {
-
-	margin: 0.75em;
-	padding: 0.75em;
-	float: left;
-
-/*	background-color: blanchedalmond;
-	border-radius: 1.5em;
-	width: 20%;*/
-	
-}
 .faded {
 	opacity: 0.5;
 }
 
 
-
-img.appView {
-	height: 7.15em;
-	border-radius: 1.26em;
-}
-img.appView:hover {
-	border: solid 5px lightpink;
+.navbar-leftside {
+	float: left;
+	clear: left;
 }
 
 .navbar-rightside {
 	float: right;
+	clear: right;
+	right: -2em;
 
 }
 	.navbar-rightside a button {
@@ -71,145 +37,29 @@ img.appView:hover {
 		clear: both;
 	}
 	.navbar-rightside button {
-		margin: 1em 2em 0 0;
-	}
-
-#sort-by-color {
-	margin-left: 1.75em
-}
-	#sort-by-color div {
 		margin: 1em 0 0 0;
 	}
 
-#sort-by-genre ul {
-	text-align: center;
-}
 
 
-
-.sort{
-	display: inline-block;
-}
-	.sort:hover{
-		cursor: pointer;
-
-	}
-.genre {
-	border-radius: 0.5em;
-	margin: 0.7em 1.3em 0.7em 1.3em;
-	color: tan;
-}
-	.genre:hover {
-		color: lightpink !important;
-
-	}
-.selected-genre {
-	color: lightpink !important;
-	font-style: bold;
-}
-
-
-
-.color {
-	width: 9.35%;
-	height: 1.5em;
-	margin: 0 0.1em 0 0.1em;
-
-}
-	.color:hover {
-		border: solid 3px lightpink !important;
-		background-color: seashell;
-	}
-
-.selected-color {
-	border: solid 3px lightpink;
-}
-
-
-#Red {
-	background-color: red;
-}
-#Orange {
-	background-color: orange;
-}
-#Yellow {
-	background-color: yellow;
-}
-#Green {
-	background-color: green;
-}
-#Blue {
-	background-color: blue;
-}
-#Violet {
-	background-color: violet;
-}
-#Brown {
-	background-color: brown;
-}
-#Black {
-	background-color: black;
-}
-#Grey {
-	background-color: grey;
-}
-#White {
-	background-color: white;
-	border: solid 1px antiquewhite;
-}
-
-
-
-
-.flash-notice {
-	color: lightpink;
-}
-
-.template {
-	height: 698px;
-	width: 343px;
-	/*float: right;*/
-
+#title-colorappin {
+	height: 4.5em;
+	margin-left: 17em;
+	margin-top: 0.5em;
 	position: fixed;
- 	bottom: 2.3%;
-  	right: 2.3%;
 
 }
 
-.iPhone-6 {
-	background-image: url(../images/template_iphone6.png);
-	background-size: 100%;
+#navbar-administrative-tasks {
 
 }
-/*	.iPhone-5 img {
-		height: 100%;
-	}
-*/
 
-.templates-screen {
-	margin-left: 8.2%;
-}
-.templates-row {
 
-}
-.first-row {
-	margin-top: 7.4em;
-}
-.last-row {
-	margin-top: 2em;
-}
-.templates-app {
-	height: 3.8em;
-	width: 3.8em;
-	margin: 0.75em 0.55em 0.75em 0.55em;
-	border-radius: 1em;
-/*	background-color: #F2F2F2;
-*/	display: inline-block;
-	background-size: 100%;
-}
-.templates-app-hover:hover {
-	background-color: #E0E0E0;
-}
+
+
+
+
+
 
 li {
 	list-style: none;
@@ -218,44 +68,17 @@ li {
 	opacity: 0;
 }
 
-.info {
-	background: beige;
-	border-radius: 1em;
-}
 
-#template-menu {
-	background-color: blanchedalmond;
-	padding: 1em;
-	border-radius: 0.5em;
-}
 
-#message-search {
-	text-align: center;
-	cursor: pointer;
-}
 
-	#message-search:hover {
-		color: pink;
-	}
+
 
 button {
 	background: snow !important;
 }
 
-.modal-content {
-	padding: 2em;
-	
-}
-.modal-title {
-	font-weight: bold;
-}
-.modal-genre {
-	font-style: italic;
-}
 
-div.modal-content{
-	border-radius: 1.5em;
-}
+
 
 
 
