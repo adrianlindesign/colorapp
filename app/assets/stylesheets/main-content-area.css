@@ -21,6 +21,22 @@ div.modal-content{
 
 }
 
+#signup-button-form {
+	display: inline;
+
+}
+
+#navbar-account li {
+	display: inline-block;
+}
+
+#message-search {
+	cursor: pointer;	
+}
+
+	#message-search:hover {
+		color: lightseagreen;
+	}
 
 
 .app-view {
@@ -58,4 +74,6 @@ img.appView:hover {
 	background: beige;
 	border-radius: 1em;
 }
+
+
 

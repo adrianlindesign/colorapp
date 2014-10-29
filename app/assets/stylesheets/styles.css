@@ -12,6 +12,9 @@
 	.navbar-links-item {
 		cursor: pointer;
 	}
+	.navbar-links-item:hover {
+		color: lightseagreen;
+	}
 
 .faded {
 	opacity: 0.5;
@@ -87,6 +90,24 @@ button {
 	background: snow !important;
 }
 
+
+
+#template-menu {
+	padding: 1em;
+	border-radius: 0.5em;
+
+}
+li {
+	display: inline;
+}
+
+#navbar-user-tasks {
+	display: inline;
+}
+
+#searchbar {
+	margin: 2em 0 0 2em;
+}
 
 
 

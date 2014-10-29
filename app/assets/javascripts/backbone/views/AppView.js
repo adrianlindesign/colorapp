@@ -21,7 +21,9 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		this.$el.effect('bounce');
 		selectedIcon = this;
 		selectedIconSrc = this.model.get('image_url');
-		$('#flash_' + this.model.get('id')).toggleClass('hide').delay(150).effect('puff');
+		var flashMessage = $('#flash_' + this.model.get('id'));
+		flashMessage.toggleClass('invisible').delay(150).animate({'opacity': 0});
+	
 		// console.log(selectedIconSrc);
 		// console.log(selectedIcon);
 		// console.log(this.el)
@@ -42,7 +44,7 @@ Colorapp.Views.AppView = Backbone.View.extend({
 		// this.$el.html(this.template( this.model.attributes ));
 		var entrails = ""
 
-		entrails += '<div class="flash-notice hide" id="flash_' + this.model.get('id') +'">'
+		entrails += '<div class="flash-notice invisible" id="flash_' + this.model.get('id') +'">'
 		entrails += 	'<p> Selected!</p>'
 		// entrails += 	'</p> (double click to view details) </p>'
 		entrails += '</div>'

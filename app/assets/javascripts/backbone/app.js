@@ -403,6 +403,7 @@ function setUpShowAllAppOnClickTitle(){
 		$('.selectedColor').toggleClass('selectedColor')
 
 		//change the message
+		$('#message-price').text("All");
 		$('#message-color').text("");
 		$('#message-view').text("apps");
 

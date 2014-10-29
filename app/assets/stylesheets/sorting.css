@@ -47,6 +47,10 @@
 	border: solid 1px antiquewhite;
 }
 
+.indicate {
+	color: lightseagreen;
+}
+
 .sort{
 	display: inline-block;
 }
