@@ -57,6 +57,7 @@ Colorapp.initialize = function(){
 
 	renderAndAppendView(fullAppListView);
 
+	$('.template').draggable();
 
 }
 
