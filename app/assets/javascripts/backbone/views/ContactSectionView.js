@@ -20,8 +20,8 @@ Colorapp.Views.ContactSectionView = Backbone.View.extend({
 		var entrails = ""
 		entrails += "<h1> Contact </h1>"
 		entrails += "<p> To contact me, please use this crystal ball </p>"
-		entrails += "<img src='http://calamitykim.typepad.com/photos/uncategorized/2007/08/22/ball.jpg' />"
-
+		entrails += "<img id='crystal-ball' src='http://calamitykim.typepad.com/photos/uncategorized/2007/08/22/ball.jpg' />"
+		entrails += "<p> Alternatively, contact me at adrian.mx.lin@gmail.com"
 		this.$el.html(entrails)
 		return this
 	}

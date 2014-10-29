@@ -20,7 +20,11 @@
 	opacity: 0.5;
 }
 
-
+#crystal-ball {
+	height: 17em;
+	border-radius: 1em;
+	margin-bottom: 1em;
+}
 .navbar-leftside {
 	float: left;
 	clear: left;
