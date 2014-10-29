@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/templates' => 'templates#index'
   post '/templates' => 'templates#create'
-  get '/templates/:id' => 'templates#show'
+
 
 
 #  Prefix Verb   URI Pattern                             Controller#Action

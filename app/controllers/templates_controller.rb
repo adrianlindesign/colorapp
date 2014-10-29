@@ -25,4 +25,12 @@ class TemplatesController < ApplicationController
     end
   end
 
+  def destroy
+
+    binding.pry
+    t = Template.find(params[:id])
+    t.destroy
+
+  end
+
 end

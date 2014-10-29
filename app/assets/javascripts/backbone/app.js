@@ -49,7 +49,6 @@ Colorapp.initialize = function(){
 	setUpTemplateViewToggle();
 	setUpTemplateShowSelect();
 
-	setUpTemplateDelete();
 	setUpSaveTemplate();
 
 
@@ -340,15 +339,23 @@ function setUpTemplateShowSelect(){
 				$('.iPhone-6').toggleClass('hide');
 			}
 		});
-		//identiy template from option input value
-		//ajax to server based on this
+		setUpTemplateDelete(templateId); //every i load a previous template, the template_id variable gets reset and sent into the setUpTemplateDelete function
+		$('.templates-app').removeClass('templates-app'); // this is to stop it from previewing so that people know they can't edit
+
 	});
 }
 
-function setUpTemplateDelete(){
+function setUpTemplateDelete(thisTemplateId){
 	$('#template-delete-button').click(function(){
 		console.log('clicked delete button!');
-		
+		console.log(thisTemplateId);
+
+		$.ajax({
+			url: '/templates/' + thisTemplateId,
+			type: "DELETE",
+			data: {id: thisTemplateId} 
+		});
+
 	});
 }
 
