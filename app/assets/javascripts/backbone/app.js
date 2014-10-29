@@ -55,6 +55,7 @@ Colorapp.initialize = function(){
 
 	fullAppCollection.fetch();
 	fullUserCollection.fetch();
+	setUpProfilePage();
 
 	renderAndAppendView(fullAppListView);
 
@@ -444,9 +445,20 @@ function setUpLinkNavBar(){
 
 
 function setUpProfilePage(){
-	
+	$('#profile-page').click(function(){
+		var profilePage = new Colorapp.Views.SectionView({});
+		var entrails;
+		$.get('/users/' + $('#user_id').val() + ".json", function(details){
+			entrails += '<h3> Greetings, ' + details.username + '!</h3>'
+			entrails += '<h4> Your email is: ' + details.email + '</h4>'
+			profilePage.render(entrails);
+			console.log(profilePage.el)
+			$('#main-content-area').empty();
+			$('#main-content-area').append(profilePage.el);
+		});
+		
+	});
 }
-
 
 
 
