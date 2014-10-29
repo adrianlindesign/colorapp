@@ -4,6 +4,7 @@ Colorapp.Views.ContactSectionView = Backbone.View.extend({
 	initialize: function(){
 		console.log("this is our contact page");
 	},
+	className: "info col-md-4 col-md-offset-4",
 
 	// template: _.template( $('#app-template').html() ),
 	

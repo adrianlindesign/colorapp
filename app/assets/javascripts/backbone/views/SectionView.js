@@ -5,6 +5,9 @@ Colorapp.Views.SectionView = Backbone.View.extend({
 		console.log("new sectionView generated!");
 	},
 
+	tagName: "div",
+	className: "info col-md-4 col-md-offset-4",
+
 	// template: _.template( $('#app-template').html() ),
 	
 	render: function(entrails){

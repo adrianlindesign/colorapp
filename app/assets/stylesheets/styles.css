@@ -1,14 +1,21 @@
 #title-header {
 	text-align: center;
+	margin-left: -1%;
+	margin-top: 1%;
 }
 	#title-header h1 {
 		background-color: pink;
-		padding: 1em 0 0.5em 0;
+		padding: 0.75em 0 0.5em 0;
 		margin: -0.25em 0 0 0;
 	}
-
+	#top-title {
+		width: 101%;
+		display: inline-block;
+	}
 	#navbar-links ul {
 		background-color: seashell;
+		padding: 1em 0 1em 0;
+		margin: -1em 0 0 0;
 	}
 
 		#navbar-links li {
@@ -42,12 +49,7 @@
 	opacity: 0.5;
 }
 
-.custom-navbar-right {
-	position: absolute;
-	right: 14.5em;
-	top: 0;
-	float: right;
-}
+
 
 img.appView {
 	height: 7.15em;
@@ -57,10 +59,32 @@ img.appView:hover {
 	border: solid 5px lightpink;
 }
 
-
-
-navbar #sort-by-color {
+.navbar-rightside {
+	float: right;
+	margin: -6em 1em 1.5em 0;
 }
+	.navbar-rightside a button {
+		float: right;
+		margin-top: 0.4em;
+	}
+
+	.navbar-rightside form {
+		clear: both;
+		margin-top: 0.25em;
+	}
+
+#sort-by-color {
+	margin-left: 1.75em
+}
+	#sort-by-color div {
+		margin: 1em 0 0 0;
+	}
+
+#sort-by-genre ul {
+	text-align: center;
+}
+
+
 
 .sort{
 	display: inline-block;
@@ -193,6 +217,11 @@ li {
 	opacity: 0;
 }
 
+.info {
+	background: beige;
+	border-radius: 1em;
+}
+
 #template-menu {
 	background-color: blanchedalmond;
 	padding: 1em;
@@ -227,9 +256,9 @@ div.modal-content{
 	border-radius: 1.5em;
 }
 
-#top-title {
-	display: inline;
-}
+
+
+
 
 .glyphicon-plus:hover {
 	color: limegreen;
