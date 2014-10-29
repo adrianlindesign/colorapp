@@ -90,7 +90,10 @@ function setUpColorNavbar(){
 		$('#message-color').text(selectedColor);
 		$('#message-genre').text("");
 		$('#message-view').text("apps");
-		
+
+		$('#message-search').animate({color: selectedColor});
+		$('#message-search').animate({color: 'black'});
+
 		var colorSortedAppsCollection = createColorCollection(selectedColor);
 
 		var colorListView = new Colorapp.Views.AppListView({
@@ -137,6 +140,8 @@ function setUpPriceFilter(){
 		$('#message-price').text(selectedPrice);
 		$('#message-genre').text("");
 		$('#message-view').text("apps");
+		$('#message-search').animate({color: selectedColor});
+		$('#message-search').animate({color: 'black'});
 
 
 
@@ -174,6 +179,8 @@ function setUpGenreNavbar(){
 		$('#message-price').text("All");
 		$('#message-genre').text(genre);
 		$('#message-view').text("apps");
+		$('#message-search').animate({color: selectedColor});
+		$('#message-search').animate({color: 'black'});
 
 
 		var genreSortedArray = sortedApps.where({genre: genre})
@@ -406,6 +413,9 @@ function setUpShowAllAppOnClickTitle(){
 		$('#message-price').text("All");
 		$('#message-color').text("");
 		$('#message-view').text("apps");
+		$('#message-search').animate({color: selectedColor});
+		$('#message-search').animate({color: 'black'});;
+
 
 		renderAndAppendView(fullAppListView); //fullAppListView is a global
 	});

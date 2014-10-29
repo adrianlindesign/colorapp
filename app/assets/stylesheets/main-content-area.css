@@ -26,9 +26,13 @@ div.modal-content{
 
 }
 
-#navbar-account li {
-	display: inline-block;
+
+#navbar-account {
+
 }
+	#navbar-account li {
+		
+	}
 
 #message-search {
 	cursor: pointer;	
@@ -60,15 +64,14 @@ img.appView {
 }
 img.appView:hover {
 	border: solid 5px lightseagreen;
+	cursor: pointer;
 }
 
 .flash-notice {
 	color: lightseagreen;
 }
 
-#navbar-account {
 
-}
 
 .info {
 	background: beige;

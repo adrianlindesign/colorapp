@@ -80,8 +80,12 @@ li {
 .invisible {
 	opacity: 0;
 }
-
-
+input {
+	border-radius: 0.25em;
+}
+select {
+	background-color:;
+}
 
 
 
@@ -93,8 +97,6 @@ button {
 
 
 #template-menu {
-	padding: 1em;
-	border-radius: 0.5em;
 
 }
 li {
@@ -116,10 +118,10 @@ li {
 
 
 .glyphicon-plus:hover {
-	color: limegreen;
+	color: gold;
 }
 .glyphicon-save:hover {
-	color: deepskyblue;
+	color: darkblue;
 }
 .glyphicon-folder-open:hover{
 	color: gold;
