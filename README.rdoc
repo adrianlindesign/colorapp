@@ -6,12 +6,21 @@ ColorApp.in is a web application that lets users search and sort iOs apps by col
 
 ColorApp.in was built over a six-day project sprint and was inspired by my love of color, organisation, and simple design. ColorApp.in was built on a Ruby-on-Rails framework, and uses Backbone.js to create a seamless, single-page application experience. Additional resources include: Heroku, Bootstrap, jQuery, Ajax, Underscore.js, Postgresql, as well as the ubiquitous HTML and CSS.
 
+Instructions:
+* Click the color bars to sort by color. Additionally click the genres or the message that says "All (green) apps". Click on the logo to show all apps again.
+* Click on the buttons on the top right to show/hide, clear current template, save, and delete saved templates.
+* Click on an app icon once to select the app and then click a location on the app location to add the app there.
+* Double click an app to toggle more information about the app, including name, genre, color details, and a link to download it.
+
+
 Some programming concepts used:
 * User Authentication via user accounts and encrypted passwords
 * Database-driven web application
 * Collection sorting and filtering
 * MVC frameworks and separation of concerns
 * UX design to highlight affordances
+
+
 
 
 Other resources: 
