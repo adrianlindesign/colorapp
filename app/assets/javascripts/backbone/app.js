@@ -325,7 +325,6 @@ function setUpSaveTemplate(){
 
 		if(response == true){
 			var templateData = $('.iPhone-6').html();
-			console.log(templateData);
 
 			$.post('/templates', {
 				screenHTML: templateData,
@@ -333,6 +332,10 @@ function setUpSaveTemplate(){
 				user_id: userId,
 				template_name: $('#template-name-input').val()
 			});
+			var templateId = parseInt($('#template-select option:last-child').val() ) + 1;
+
+			var entrails = '<option id="template-select-option-' + templateId + '" value="' + templateId + '">' + templateName + '</option>'
+			$('#template-select').append(entrails);
 		}
 	});
 }
@@ -377,7 +380,7 @@ function setUpTemplateShowSelect(){
 
 function setUpTemplateDelete(thisTemplateId){
 	$('#template-delete-button').click(function(){
-		
+		var thisTemplate = $('#template-select-option-' + thisTemplateId);
 		var response = confirm("Delete this template?");
 
 		if (response == true ){
@@ -386,10 +389,13 @@ function setUpTemplateDelete(thisTemplateId){
 				type: "DELETE",
 				data: {id: thisTemplateId} 
 			});
-		}	
 
+			$(thisTemplate).remove(); // remove from dom upon deletion. when reload, it's not rendered. good as gone.
+		}	
 	});
 }
+
+
 
 // --------------------------------------------------------------------------------------
 
