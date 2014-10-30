@@ -1,29 +1,24 @@
 == README
-TESTING 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ColorApp.in
 
-Things you may want to cover:
+ColorApp.in is a web application that lets users search and sort iOs apps by color, as well as genre and price, and lets them plan out how they will display them on their iPhone. This app was my final project for the August session of General Assembly's Web Development Immersive, a three month-programming bootcamp that takes people with no coding experience and equips them with the skills necessary to find a job as an entry-level web developer.
 
-* Ruby version
+ColorApp.in was built over a six-day project sprint and was inspired by my love of color, organisation, and simple design. ColorApp.in was built on a Ruby-on-Rails framework, and uses Backbone.js to create a seamless, single-page application experience. Additional resources include: Heroku, Bootstrap, jQuery, Ajax, Underscore.js, Postgresql, as well as the ubiquitous HTML and CSS.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Some programming concepts used:
+* User Authentication via user accounts and encrypted passwords
+* Database-driven web application
+* Collection sorting and filtering
+* MVC frameworks and separation of concerns
+* UX design to highlight affordances
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Other resources: 
+
+Trello: 
+https://trello.com/b/MAX2Y78d
+
+Github Repo: 
+https://github.com/AdrianMLin/colorapp
+
