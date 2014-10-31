@@ -6,7 +6,6 @@ Colorapp.Views.SectionView = Backbone.View.extend({
 	},
 
 	tagName: "div",
-	className: "info col-md-4 col-md-offset-4",
 
 	// template: _.template( $('#app-template').html() ),
 	

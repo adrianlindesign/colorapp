@@ -468,16 +468,20 @@ function setUpLinkNavBar(){
 
 
 function setUpProfilePage(){
-	$('#profile-page').click(function(){
-		$('.iPhone-6').toggleClass('hide'); //hide the iPhone if it exists, then render the other stuff
+	$('#profile-page').click(function(){ 
+
+		if ( $('.iPhone-6').hasClass('hide') == false){ //hide the iPhone if it exists, then render the other stuff
+			$('.iPhone-6').addClass('hide');  
+		}
+
 		var profilePage = new Colorapp.Views.SectionView({});
 		var userId = $('#user_id').val();
 		var entrails;
 		var iPhoneDiv;
 
 		$.get('/users/' + userId + ".json", function(user){
-			entrails += '<h3>' + user.username + '</h3>';
-			entrails += '<h4>' + user.email + '</h4>';
+			entrails += '<h3>' + user.username + '</h3>'
+			entrails += '<h4>' + user.email + '</h4>'
 
 			$.get('/templates', function(templates){
 				console.log(userId)
@@ -486,12 +490,13 @@ function setUpProfilePage(){
 					if(template.user_id == userId) { // make sure it's the user
 
 
-						iPhoneDiv += "<div class='user-template'>";
-						iPhoneDiv += 	"<h3>" + template.name + "</div>";
+						iPhoneDiv += "<div class='template-show'>"
+						iPhoneDiv += 	"<h3>" + template.name + "</h3>"
 						iPhoneDiv +=	"<div class='iPhone-6'>"
 						iPhoneDiv += 		template.screenHTML;
 						iPhoneDiv +=	"</div>"
-						iPhoneDiv += "</div>";
+
+						iPhoneDiv += "</div>"
 					}	
 					entrails += iPhoneDiv;
 
