@@ -323,6 +323,7 @@ function setUpSaveTemplate(){
 		var templateName = $('#template-name-input').val();
 		var response = confirm("Save " + templateName + "?");
 
+		//if user clicks 'okay' then save the template
 		if(response == true){
 			var templateData = $('.iPhone-6').html();
 
@@ -334,6 +335,7 @@ function setUpSaveTemplate(){
 				template_name: $('#template-name-input').val()
 			});
 			var templateId = parseInt($('#template-select option:last-child').val() ) + 1;
+
 
 			var entrails = '<option id="template-select-option-' + templateId + '" value="' + templateId + '">' + templateName + '</option>'
 			$('#template-select').append(entrails);
@@ -484,11 +486,14 @@ function setUpProfilePage(){
 			entrails += '<h3>' + user.username + '</h3>'
 			entrails += '<h4>' + user.email + '</h4>'
 
-			$('#template-select').empty(); // clear the select dropdown to make way for user's templates
 
-			//get template data
+			
+
+			//get template data to render view
 			$.get('/templates', function(templates){
-				console.log(userId)
+				$('#template-select').empty(); // clear the select dropdown to make way for user's templates
+				var i = 0;
+				
 				_.each(templates, function(template){
 
 					//make sure it is the user's templates
@@ -498,16 +503,23 @@ function setUpProfilePage(){
 						var usersTemplateOptionEntrails = '<option id="template-select-option-' + template.id + '" value="' + template.id + '"> [' + user.username + '] ' + template.name + '</option>'						
 						$('#template-select').append(usersTemplateOptionEntrails);
 
+
+
 						//create the template entrails
 						iPhoneDiv += "<div class='template-show'>"
 						iPhoneDiv += 	"<h3>" + template.name + "</h3>"
 						iPhoneDiv +=	"<div class='iPhone-6'>"
 						iPhoneDiv += 		template.screenHTML;
 						iPhoneDiv +=	"</div>"
-
 						iPhoneDiv += "</div>"
+
+						entrails += iPhoneDiv;
+
+						// console.log('entrails');
+						// console.log(i)
+						// i ++
 					}	
-					entrails += iPhoneDiv;
+
 
 				});
 				//render the view
