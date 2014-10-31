@@ -477,29 +477,26 @@ function setUpProfilePage(){
 		$.get('/users/' + userId + ".json", function(user){
 			entrails += '<h3>' + user.username + '</h3>';
 			entrails += '<h4>' + user.email + '</h4>';
-			// console.log(userId);
+
 			$.get('/templates', function(templates){
 				console.log(userId)
 				_.each(templates, function(template){
-					// console.log(template)
-					// console.log(template.user_id)
 
 					if(template.user_id == userId) { // make sure it's the user
-						// console.log(template.name);
-						// console.log(template.screenHTML);
-						// console.log(template.user_id);
 
 
 						iPhoneDiv += "<div class='user-template'>";
 						iPhoneDiv += 	"<h3>" + template.name + "</div>";
-						iPhoneDiv += 	template.screenHTML;
+						iPhoneDiv +=	"<div class='iPhone-6'>"
+						iPhoneDiv += 		template.screenHTML;
+						iPhoneDiv +=	"</div>"
 						iPhoneDiv += "</div>";
 					}	
 					entrails += iPhoneDiv;
 
 				});
 				profilePage.render(entrails);
-				// console.log(profilePage.el);
+
 				$('#main-content-area').empty();
 				$('#main-content-area').append(profilePage.el);
 				

@@ -24,7 +24,7 @@
 #template-menu {
 	position: fixed;
 }
-.template {
+.template { /* diff from .iPhone-6 because of profile */
 	height: 698px;
 	width: 343px;
 	/*float: right;*/
@@ -35,7 +35,7 @@
 
 }
 
-.iPhone-6 {
+.iPhone-6 { /* diff from .template because of profile */
 	background-image: url(../images/template_iphone6.png);
 	background-size: 100%;
 	z-index: 100000;
