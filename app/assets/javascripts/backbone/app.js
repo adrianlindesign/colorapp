@@ -469,15 +469,25 @@ function setUpLinkNavBar(){
 function setUpProfilePage(){
 	$('#profile-page').click(function(){
 		var profilePage = new Colorapp.Views.SectionView({});
+		var userId = $('#user_id').val();
 		var entrails;
-		$.get('/users/' + $('#user_id').val() + ".json", function(details){
-			entrails += '<h3> Greetings, ' + details.username + '!</h3>'
-			entrails += '<h4> Your email is: ' + details.email + '</h4>'
-			profilePage.render(entrails);
-			console.log(profilePage.el)
-			$('#main-content-area').empty();
-			$('#main-content-area').append(profilePage.el);
+
+		$.get('/users/' + userId + ".json", function(user){
+			entrails += '<h3>' + user.username + '</h3>'
+			entrails += '<h4>' + user.email + '</h4>'
+		}).done(function() {$.get('/templates', function(templates){
+				console.log(templates);
+				
+				_.each(templates, function(template){
+					console.log(template.name);
+					console.log(template.)
+				});
+			});
 		});
+		profilePage.render(entrails);
+		console.log(profilePage.el)
+		$('#main-content-area').empty();
+		$('#main-content-area').append(profilePage.el);
 		
 	});
 }
