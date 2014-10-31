@@ -479,17 +479,26 @@ function setUpProfilePage(){
 		var entrails;
 		var iPhoneDiv;
 
+		//get user data
 		$.get('/users/' + userId + ".json", function(user){
 			entrails += '<h3>' + user.username + '</h3>'
 			entrails += '<h4>' + user.email + '</h4>'
 
+			$('#template-select').empty(); // clear the select dropdown to make way for user's templates
+
+			//get template data
 			$.get('/templates', function(templates){
 				console.log(userId)
 				_.each(templates, function(template){
 
-					if(template.user_id == userId) { // make sure it's the user
+					//make sure it is the user's templates
+					if(template.user_id == userId) { 
 
+						//show the user's templates in the dropdown when he logs in
+						var usersTemplateOptionEntrails = '<option id="template-select-option-' + template.id + '" value="' + template.id + '"> [' + user.username + '] ' + template.name + '</option>'						
+						$('#template-select').append(usersTemplateOptionEntrails);
 
+						//create the template entrails
 						iPhoneDiv += "<div class='template-show'>"
 						iPhoneDiv += 	"<h3>" + template.name + "</h3>"
 						iPhoneDiv +=	"<div class='iPhone-6'>"
@@ -501,6 +510,7 @@ function setUpProfilePage(){
 					entrails += iPhoneDiv;
 
 				});
+				//render the view
 				profilePage.render(entrails);
 
 				$('#main-content-area').empty();
@@ -510,9 +520,9 @@ function setUpProfilePage(){
 
 
 		});
-			
 
 		
+			
 		
 	});
 }
