@@ -479,7 +479,7 @@ function setUpProfilePage(){
 		var profilePage = new Colorapp.Views.SectionView({});
 		var userId = $('#user_id').val();
 		var entrails;
-		var iPhoneDiv;
+
 
 		//get user data
 		$.get('/users/' + userId + ".json", function(user){
@@ -493,8 +493,10 @@ function setUpProfilePage(){
 			$.get('/templates', function(templates){
 				$('#template-select').empty(); // clear the select dropdown to make way for user's templates
 				var i = 0;
-				
+
 				_.each(templates, function(template){
+
+					var iPhoneDiv = ""; //must reset here so it doesn't duplicate
 
 					//make sure it is the user's templates
 					if(template.user_id == userId) { 
@@ -502,7 +504,6 @@ function setUpProfilePage(){
 						//show the user's templates in the dropdown when he logs in
 						var usersTemplateOptionEntrails = '<option id="template-select-option-' + template.id + '" value="' + template.id + '"> [' + user.username + '] ' + template.name + '</option>'						
 						$('#template-select').append(usersTemplateOptionEntrails);
-
 
 
 						//create the template entrails
@@ -513,13 +514,13 @@ function setUpProfilePage(){
 						iPhoneDiv +=	"</div>"
 						iPhoneDiv += "</div>"
 
+						
 						entrails += iPhoneDiv;
-
 						// console.log('entrails');
 						// console.log(i)
 						// i ++
 					}	
-
+					
 
 				});
 				//render the view
