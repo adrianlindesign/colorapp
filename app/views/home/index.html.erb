@@ -103,7 +103,9 @@
           <li><select title="show previous templates" name="template_id" id="template-select"><!-- user id is session-->
             <%if templates%>
               <%templates.each do |t|%>
-                <option id="template-select-option-<%=t.id%>" value="<%=t['id']%>"><%=t.name%></option>
+                <%if t.user_id == 0%> <!-- for public templates -->
+                  <option id="template-select-option-<%=t.id%>" value="<%=t['id']%>"><%=t.name%></option>
+                <%end%>
               <%end%>
             <%end%>
           </select></li>   
