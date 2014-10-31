@@ -469,6 +469,7 @@ function setUpLinkNavBar(){
 
 function setUpProfilePage(){
 	$('#profile-page').click(function(){
+		$('.iPhone-6').toggleClass('hide'); //hide the iPhone if it exists, then render the other stuff
 		var profilePage = new Colorapp.Views.SectionView({});
 		var userId = $('#user_id').val();
 		var entrails;
