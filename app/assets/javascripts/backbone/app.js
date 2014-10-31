@@ -290,7 +290,7 @@ function makeTemplateView(){
 }
 
 function createTemplatesApps(){
-	for (var i = 0; i < 4; i++) { // four for each row
+	for (var i = 0; i < 4; i++) { // four for a row
 		_.each($('.templates-row'), function(row) { // create a view for this row
 
 			var templatesAppView = new Colorapp.Views.TemplatesAppView();
@@ -489,7 +489,7 @@ function setUpProfilePage(){
 
 
 
-
+// let's get it started in here!
 $(function(){
 	// if( $('#main-content-area') != [] ){
 		//How do i make it so it only loads on all apps? -- make it spa

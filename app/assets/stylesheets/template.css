@@ -4,15 +4,15 @@
 }
 
 .first-row {
-	margin-top: 7.4em;
+	margin-top: 6.7em;
 }
 .last-row {
-	margin-top: 2em;
+	margin-top: 0.8em;
 }
 .templates-app {
 	height: 3.8em;
 	width: 3.8em;
-	margin: 0.75em 0.55em 0.75em 0.55em;
+	margin: 0.5em 0.55em 0.5em 0.7em;
 	border-radius: 1em;
 	display: inline-block;
 	background-size: 100%;
