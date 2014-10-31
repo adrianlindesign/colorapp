@@ -12,10 +12,9 @@ var fullUserCollection;
 var fullUserListView;
 
 
-
 var templateView;
 
-var userId = parseInt( $('#user_id').val());
+var userId = parseInt($('#user_id').val());
 
 Colorapp.initialize = function(){
 
@@ -155,6 +154,7 @@ function setUpPriceFilter(){
 
 	});
 }
+
 
 function setUpGenreNavbar(){
 	$('.genre').on('click', function(){
@@ -326,10 +326,11 @@ function setUpSaveTemplate(){
 		if(response == true){
 			var templateData = $('.iPhone-6').html();
 
+			var thisUserId = parseInt($('#user_id').val());
 			$.post('/templates', {
 				screenHTML: templateData,
 				device: 'iphone-6',
-				user_id: userId,
+				user_id: thisUserId,
 				template_name: $('#template-name-input').val()
 			});
 			var templateId = parseInt($('#template-select option:last-child').val() ) + 1;
@@ -471,23 +472,44 @@ function setUpProfilePage(){
 		var profilePage = new Colorapp.Views.SectionView({});
 		var userId = $('#user_id').val();
 		var entrails;
+		var iPhoneDiv;
 
 		$.get('/users/' + userId + ".json", function(user){
-			entrails += '<h3>' + user.username + '</h3>'
-			entrails += '<h4>' + user.email + '</h4>'
-		}).done(function() {$.get('/templates', function(templates){
-				console.log(templates);
-				
+			entrails += '<h3>' + user.username + '</h3>';
+			entrails += '<h4>' + user.email + '</h4>';
+			// console.log(userId);
+			$.get('/templates', function(templates){
+				console.log(userId)
 				_.each(templates, function(template){
-					console.log(template.name);
-					console.log(template.)
+					// console.log(template)
+					// console.log(template.user_id)
+
+					if(template.user_id == userId) { // make sure it's the user
+						// console.log(template.name);
+						// console.log(template.screenHTML);
+						// console.log(template.user_id);
+
+
+						iPhoneDiv += "<div class='user-template'>";
+						iPhoneDiv += 	"<h3>" + template.name + "</div>";
+						iPhoneDiv += 	template.screenHTML;
+						iPhoneDiv += "</div>";
+					}	
+					entrails += iPhoneDiv;
+
 				});
+				profilePage.render(entrails);
+				// console.log(profilePage.el);
+				$('#main-content-area').empty();
+				$('#main-content-area').append(profilePage.el);
+				
 			});
+
+
 		});
-		profilePage.render(entrails);
-		console.log(profilePage.el)
-		$('#main-content-area').empty();
-		$('#main-content-area').append(profilePage.el);
+			
+
+		
 		
 	});
 }
