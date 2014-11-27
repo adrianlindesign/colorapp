@@ -2,6 +2,8 @@
 
 ColorApp.in
 
+https://cloud.githubusercontent.com/assets/7014171/5219027/106dae74-7621-11e4-9d70-bccce7650b60.png
+
 ColorApp.in is a web application that lets users search and sort iOs apps by color, as well as genre and price, and lets them plan out how they will display them on their iPhone. This app was my final project for the August session of General Assembly's Web Development Immersive, a three month-programming bootcamp that takes people with no coding experience and equips them with the skills necessary to find a job as an entry-level web developer.
 
 ColorApp.in was built over a six-day project sprint and was inspired by my love of color, organisation, and simple design. ColorApp.in was built on a Ruby-on-Rails framework, and uses Backbone.js to create a seamless, single-page application experience. Additional resources include: Heroku, Bootstrap, jQuery, Ajax, Underscore.js, Postgresql, as well as the ubiquitous HTML and CSS.
