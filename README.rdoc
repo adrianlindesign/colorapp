@@ -2,7 +2,8 @@
 
 ColorApp.in
 
-https://cloud.githubusercontent.com/assets/7014171/5219027/106dae74-7621-11e4-9d70-bccce7650b60.png
+![alt tag](https://cloud.githubusercontent.com/assets/7014171/5219027/106dae74-7621-11e4-9d70-bccce7650b60.png)
+![alt tag](https://raw.github.com/adrianmlin/colorapp/colorappin_image.png)
 
 ColorApp.in is a web application that lets users search and sort iOs apps by color, as well as genre and price, and lets them plan out how they will display them on their iPhone. This app was my final project for the August session of General Assembly's Web Development Immersive, a three month-programming bootcamp that takes people with no coding experience and equips them with the skills necessary to find a job as an entry-level web developer.
 
