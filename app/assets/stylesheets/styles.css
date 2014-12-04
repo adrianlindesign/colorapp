@@ -37,6 +37,10 @@
 
 }
 
+#instructions-image {
+	width: 100%;
+}
+
 #hero-image {
 	width: 105%;
 	margin-left: -1.5%;

@@ -25,3 +25,4 @@ Colorapp.Views.SectionView = Backbone.View.extend({
 	}
 
 });
+

@@ -437,10 +437,18 @@ function setUpLinkNavBar(){
 	//set up About to show about
 	$('#navbar-about').click(function(){
 		var aboutPageView = new Colorapp.Views.SectionView();
-		var entrails = "";
-		entrails += "<h1>About</h1>"
-		entrails += "<p>ColorApp.in is an app that lets you sort apps by color and make templates to plan out your colorful phone!</p>"; 
-		entrails += "<p>Open the template, click icons, and place them on the phone template. Save templates too!";
+		var entrails = ""
+		var aboutIntroText = "ColorApp.in is a web application that lets users search and sort iOS apps by color, as well as genre and price, and lets them plan out how they will display them on their iPhone. This app was my final project for the August session of General Assembly's Web Development Immersive, a three month-programming bootcamp that takes people with no coding experience and equips them with the skills necessary to find a job as an entry-level web developer."
+		var aboutIntroText2 = "ColorApp.in was built over a six-day project sprint and was inspired by my love of color, organisation, and simple design. ColorApp.in was built on a Ruby-on-Rails framework, and uses Backbone.js to create a seamless, single-page application experience. Additional resources include: Heroku, Bootstrap, jQuery, Ajax, Underscore.js, Postgresql, as well as the ubiquitous HTML and CSS."
+
+		entrails += "<h2> About </h2>"
+		entrails += "<p>" + aboutIntroText + "</p>"
+		entrails += "<br/></p>" + aboutIntroText2 + "</p>" 
+		entrails += "<br/><br/>"
+		entrails += "<h2> Guide to use:</h2>"
+		entrails += "<img id='instructions-image' src='/assets/colorappin_instructions.png'>"
+
+
 		
 		aboutPageView.render(entrails);
 		$('#main-content-area').empty();

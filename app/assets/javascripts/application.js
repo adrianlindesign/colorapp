@@ -38,6 +38,7 @@
 //= require ./backbone/collections/UserCollection
 
 //= require ./backbone/views/ContactSectionView
+// require ./backbone/views/AboutSectionView
 
 //= require ./backbone/views/SectionView
 
