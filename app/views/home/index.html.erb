@@ -70,7 +70,7 @@
 
             <li> <!-- log in -->
               <form id="signup-button-form" action="/login" method="POST">
-                <input type="text" name="email" placeholder="Email">
+                <input type="email" name="email" placeholder="Email">
                 <input type="password" name="password" placeholder="Password">
                 <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
                 <button title="Log in" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span></button>
@@ -92,10 +92,10 @@
           <li><button title="Show/hide template" type="button" class="btn btn-default" id="template-show-button"><span class="glyphicon glyphicon-phone"></span></button></li>
 
           <!-- template menu - template new button -->
-          <li><button title="Show/hide template menu" class="btn btn-default" id="template-new-button"><span class="glyphicon glyphicon-plus"></span></button></li>
+          <li><button title="Clear template" class="btn btn-default" id="template-new-button"><span class="glyphicon glyphicon-plus"></span></button></li>
 
           <!-- template menu - save button -->
-          <li><button title="Save as new template" type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button></li>
+          <li><button title="Save template" type="button" class="btn btn-default" id="template-save-button"><span class="glyphicon glyphicon-save"></span></button></li>
 
           <!-- template menu - template select button -->        
           <li><button title="Load selected template" class="btn btn-default" id="template-select-button"><span class="glyphicon glyphicon-folder-open"></span></button></li>
