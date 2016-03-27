@@ -1,28 +1,27 @@
 <input id="user_id" type="hidden" name="user_id" value="<%=session[:user_id]%>">
 
+<!--~~~~~~~~~~~~-->
+<!-- Navigation -->
+<!--~~~~~~~~~~~~-->
 
-<!-- Userbar - searching, message, and template -->
+<!-- primary navbar -->
 <nav id="navbar-user-tasks"class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
    
-
     <div class"top-left">
-     <%= render 'navbar_partials/searchbar' %>
-     <%= render 'navbar_partials/misc_buttons' %>
+     <%= render 'navbar_partials/primary/searchbar' %>
+     <%= render 'navbar_partials/primary/misc_buttons' %>
     </div>
 
 
-
-
     <div class="top-center">
-      <!-- title -->
       <img id="title-colorappin" src="/assets/colorappin-title-shrunk-upped.png" alt="Adrian M Lin's ColorApp.in Logo">
     </div>
     
 
     <div class="top-right">
       <!-- log in/ sign up / error msg details -->
-      <%= render 'navbar_partials/session_details' %>
+      <%= render 'navbar_partials/primary/session_details' %>
 
       <!-- template menu -->
       <navbar id="template-menu" class="navbar-rightside">
@@ -57,56 +56,37 @@
       
         </ul>
       </navbar>
-
     </div>
-
-
-
 
   </div>
 </nav>
 
-
-
-
-
+<!-- hero image -->
 <img id="hero-image" src="/assets/colorapp-title-background-small-stretched.jpg" alt="Adrian M Lin's ColorApp.in cover image">
 
+<!-- secondary navbar -->
 <div id="navbar-sorting-bar" class="container-fluid">
-  <!-- sortbar - colors and genres -->
-  <%= render 'home/navbar_sorting' %>
+  <%= render 'navbar_partials/secondary/navbar_sorting' %>
 </div>
 
 
 
 
-
-
-<nav id="navbar-administrative-tasks" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <div class="container-fluid">
-    <h6 style="float:left"> General Assembly - August Web Development Immersive </h6>
-    <h6 style="float:right"> ColorApp.in by Adrian M Lin</h6>
-
-
-
-    
-  </div>
-</nav>
-
-
-
-
-
-
-
-
-
-
+<!--~~~~~~~~~~~~~~~~~~~-->
 <!-- main content area -->
+<!--~~~~~~~~~~~~~~~~~~~-->
 <div id="main-content-area">
   <img id="loading-circle" src='/images/spinner.gif'> 
 </div>
 <div id="main-content-bottom-bumper"></div> <!-- this takes the hiding from the bottom bar -->
 
 <%= render 'home/template_iphone' %>
+
+
+
+
+<!--~~~~~~~~-->
+<!-- footer -->
+<!--~~~~~~~~-->
+<!-- render 'navbar_partials/footer/footer' %> -->
 
